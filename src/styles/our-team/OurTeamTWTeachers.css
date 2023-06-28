@@ -1,0 +1,46 @@
+#our-team-tw-teachers-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url(../../images/OurTeamBG.webp); */
+    background-size: contain;
+}
+
+#our-team-tw-teachers {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50rem;
+    gap: 3rem;
+}
+
+.taiwan-teacher-picture {
+    height: 16rem;
+}
+
+.taiwan-teacher-name {
+    color: darkblue;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* mobile portrait */
+@media (max-width:500px) {
+    #our-team-tw-teachers {
+        flex-direction: column;
+        align-items: center;
+        width: 70vw;
+        gap: 2vw;
+    }
+
+    .taiwan-teacher-picture {
+        height: 55vw;
+    }
+
+    .taiwan-teacher-name {
+        font-size: 6vw;
+    }
+}

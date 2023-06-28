@@ -1,0 +1,84 @@
+#english-footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    height: 6.5rem;
+    background-color: white;
+}
+
+#english-footer-phone-number {
+    color: darkred;
+    font-size: 2.8rem;
+    font-weight: bold;text-shadow: 2px 2px 7px slategray;
+    text-decoration: unset;
+}
+
+#english-footer-logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    
+}
+
+#english-footer-sky-logo {
+    height: 3.5rem;
+}
+
+/* mobile portrait */
+@media (max-width:1030px) {
+    #english-footer-container {
+        flex-direction: row;
+        height: 10vw;
+        padding: 0vw 4vw 0 4vw;   
+        justify-content: space-between;
+    }
+
+    #english-footer-phone-number {
+        font-size: 4vw;
+    }
+
+    #english-footer-logo-container {
+        height: 6vw;
+        padding-top: 2vw;
+        gap: 6vw;
+    }
+
+    #english-footer-sky-logo {
+        height: 6vw;
+    }
+
+    #footer-fb-logo {
+        height: 6vw;
+    }
+}
+
+/* mobile portrait */
+@media (max-width:500px) {
+    #english-footer-container {
+        flex-direction: column;
+        height: 20vw;
+        padding: 0vw 4vw 0 4vw;   
+        gap: 0;
+    }
+
+    #english-footer-phone-number {
+        font-size: 8vw;
+    }
+
+    #english-footer-logo-container {
+        height: 6vw;
+        padding-top: 2vw;
+        gap: 6vw;
+    }
+
+    #english-footer-sky-logo {
+        height: 6vw;
+    }
+
+    #footer-fb-logo {
+        height: 6vw;
+    }
+}

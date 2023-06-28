@@ -1,0 +1,94 @@
+
+#our-classes-intro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0rem 0rem 0rem;
+    background-size: contain;
+}
+
+#our-classes-intro-box {
+    display: flex;
+    flex-direction: row;
+    width: 58.5rem;
+    padding: 1rem;
+    color: darkred;
+    gap: 0.8rem;
+    background-color: white;
+    border-radius: 25px;
+}
+
+#our-classes-intro-image {
+    height: 18.5rem;
+    border-radius: 25px;
+}
+
+#our-classes-intro-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+
+}
+
+#our-classes-intro-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-top:0.5rem;
+    color: darkgreen;
+}
+
+/* mobile portrait */
+@media (max-width:1030px) {
+
+
+    #our-classes-intro-box {
+        align-items: center;
+        text-align: left;
+        width: 90vw;
+        
+    }
+
+    #our-classes-intro-image {
+        object-fit: cover;
+        width: 30vw;
+        height: 30vw;
+    }
+
+    #our-classes-intro-title {
+        font-size: 5vw;
+    }
+
+    #our-classes-intro-text {
+        font-size: 2.4vw;
+    }
+}
+
+/* mobile portrait */
+@media (max-width:500px) {
+
+    #our-classes-intro-container {
+        padding-top: unset;
+    }
+    #our-classes-intro-box {
+        flex-direction: column-reverse;
+        width: 100vw;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+    #our-classes-intro-image {
+        height: unset;
+        width: 80vw;
+    }
+
+    #our-classes-intro-title {
+        font-size: 9vw;
+    }
+
+    #our-classes-intro-text {
+        font-size: 5vw;
+        width: 80vw;
+        padding: 2.5vw;
+    }
+}
