@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useTeachersContext } from '../../hooks/useTeachersContext'
 
 // components
-import TeacherDetails from "../components/TeacherDetails"
+import TeacherDetails from "../../components/TeacherDetails"
+import TeacherForm from "../../components/TeacherForm"
 
 export default function Admin() {
-    const [teachers, setTeachers] = useState(null)
+    const { teachers, dispatch } = useTeachersContext()
+    
 
     useEffect(() => {
         const fetchTeachers = async() => {
@@ -12,7 +15,10 @@ export default function Admin() {
             const json = await response.json()
 
             if(response.ok) {
-                setTeachers(json)
+                dispatch({
+                    type: 'SET_TEACHERS',
+                    payload: json
+                })
             }
         }
 
@@ -26,6 +32,7 @@ export default function Admin() {
                     <TeacherDetails key={teacher._id} teacher={teacher} />
                 ))}
             </div>
+            <TeacherForm />
         </div>
     )
 }
