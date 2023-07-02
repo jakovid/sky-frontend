@@ -9,6 +9,7 @@ export default function TeacherForm() {
     const [bio, setBio] = useState('')
     const [img, setImg] = useState('')
     const [error, setError] = useState(null)
+    const [emptyFields, setEmptyFields] = useState([])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -26,9 +27,11 @@ export default function TeacherForm() {
 
         if (!response.ok) {
             setError(json.error)
+            setEmptyFields(json.emptyFields)
         }
         if (response.ok) {
             setError(null)
+            setEmptyFields([])
             console.log('new teacher add', json)
             setName('')
             setCountry('')
@@ -47,6 +50,7 @@ export default function TeacherForm() {
                 type="text"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
+                className={emptyFields.includes('name') ? "error" : ""}
             />
 
             <label>Country:</label>
@@ -54,6 +58,7 @@ export default function TeacherForm() {
                 type="text"
                 onChange={(e) => setCountry(e.target.value)}
                 value={country}
+                className={emptyFields.includes('country') ? "error" : ""}
             >
                 <option value="">--Select a Country</option>
                 <option value="Taiwan">Taiwan</option>
@@ -78,6 +83,7 @@ export default function TeacherForm() {
                 type="text"
                 onChange={(e) => setImg(e.target.value)}
                 value={img}
+                className={emptyFields.includes('img') ? "error" : ""}
             />
 
             <button>Add Teacher</button>

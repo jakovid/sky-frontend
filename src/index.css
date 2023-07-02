@@ -62,7 +62,12 @@ header a {
 }
 
 .teacher-details span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
+  height: 1.5rem;
+  width: 1.5rem;
   top: 20px;
   right: 20px;
   cursor: pointer;
@@ -70,6 +75,12 @@ header a {
   padding: 6px;
   border-radius: 50%;
   color: #333;
+  fill: darkred;
+}
+
+.teacher-details span:hover {
+  background-color: darkred;
+  fill: white;
 }
 
 label, input, select {
@@ -100,4 +111,7 @@ div.error {
   color: var(--error);
   border-radius: 4px;
   margin: 20px 0;
+}
+input.error, select.error {
+  border: 1px solid var(--error);
 }

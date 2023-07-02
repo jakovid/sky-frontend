@@ -12,6 +12,10 @@ export const teachersReducer = (state, action) => {
             return {
                 teachers: [action.payload, ...state.teachers]
             }
+        case 'DELETE_TEACHER' :
+            return {
+                teachers: state.teachers.filter((t) => t._id !== action.payload._id )
+            }
         default:
             return state
     }
