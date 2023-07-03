@@ -76,6 +76,7 @@ header a {
   border-radius: 50%;
   color: #333;
   fill: darkred;
+  border: 2px solid darkred;
 }
 
 .teacher-details span:hover {
