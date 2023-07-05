@@ -47,7 +47,6 @@ header a {
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 .teacher-details h4 {
-  margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
@@ -55,10 +54,6 @@ header a {
   margin: 0;
   font-size: 0.9em;
   color: #555;
-}
-
-.teacher-details img {
-  height: 10rem
 }
 
 .teacher-details span {
@@ -82,6 +77,24 @@ header a {
 .teacher-details span:hover {
   background-color: darkred;
   fill: white;
+}
+
+.teacher-details div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2rem;
+  gap: 1rem;
+  width: 8rem;
+}
+
+.teacher-img {
+  max-height: 10rem;
+  max-width: 8rem;
+}
+
+.teacher-flag {
+  height: 1rem;
 }
 
 label, input, select {

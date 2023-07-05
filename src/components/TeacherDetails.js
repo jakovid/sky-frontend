@@ -3,20 +3,35 @@ import { BsFillTrash3Fill } from 'react-icons/bs'
 import TW from '../images/tw.png';
 import USA from '../images/usa.png';
 import CN from '../images/cn.png';
+import UK from '../images/uk.png';
+import IRE from '../images/ire.png';
+import NZ from '../images/nz.png';
+import AU from '../images/au.png'
+import SA from '../images/sa.png'
 
 export default function TeacherDetails({ teacher }) {
     const { dispatch } = useTeachersContext()
 
     function countrySwitch(country) {
         switch(country) {
-          case 'Taiwan':
-            return TW;
-        case 'USA':
-            return USA;
-        case 'Canada':
-            return CN;
-          default:
-            return 'foo';
+            case 'Taiwan':
+                return TW;
+            case 'USA':
+                return USA;
+            case 'Canada':
+                return CN;
+            case 'UK':
+                return UK;
+            case 'Ireland':
+                return IRE;
+            case 'New Zealand' :
+                return NZ;
+            case 'Australia':
+                return AU;
+            case 'South Africa':
+                return SA;
+            default:
+                return '';
         }
       };
 
@@ -34,9 +49,10 @@ export default function TeacherDetails({ teacher }) {
     return (
         <div className="teacher-details">
             <img src={teacher.img} className="teacher-img"/>
-            <h4>{teacher.name}</h4>
-            <p>{teacher.country}</p>
-            <img src={countrySwitch(teacher.country)} />
+            <div>
+                <h4>{teacher.name}</h4>
+                <img className="teacher-flag" src={countrySwitch(teacher.country)} />
+            </div>
             <p>{teacher.bio}</p>
             <span onClick={handleClick} ><BsFillTrash3Fill fill="inherit" /></span>
         </div>
