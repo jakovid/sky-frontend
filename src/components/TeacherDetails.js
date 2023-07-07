@@ -51,7 +51,6 @@ export default function TeacherDetails({ teacher }) {
             <img src={teacher.img} className="teacher-img"/>
             <div>
                 <h4>{teacher.name}</h4>
-                <div>{teacher.country}</div>
                 <img className="teacher-flag" src={countrySwitch(teacher.country)} />
             </div>
             <p>{teacher.bio}</p>
