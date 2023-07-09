@@ -48,7 +48,6 @@ export default function TeacherDetails({ teacher }) {
 
     return (
         <div className="teacher-details">
-            <h2>Teacher:</h2>
             <img src={teacher.img} className="teacher-img"/>
             <div>
                 <h4>{teacher.name}</h4>
