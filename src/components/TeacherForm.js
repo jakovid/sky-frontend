@@ -41,6 +41,7 @@ export default function TeacherForm() {
         }
     }
 
+
     return(
         <form className="create" onSubmit={handleSubmit}>
             <h3>Add a New Teacher</h3>
@@ -80,9 +81,8 @@ export default function TeacherForm() {
 
             <label>Teacher Picture:</label>
             <input 
-                type="text"
-                onChange={(e) => setImg(e.target.value)}
-                value={img}
+                type="file"
+                onChange={(e) => setImg(e.target.files)}
                 className={emptyFields.includes('img') ? "error" : ""}
             />
 
