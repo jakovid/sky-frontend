@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTeachersContext } from "../hooks/useTeachersContext";
+import Axios from 'axios';
 
 export default function TeacherForm() {
     const { dispatch } = useTeachersContext()
@@ -41,6 +42,17 @@ export default function TeacherForm() {
         }
     }
 
+    const uploadImage = (e) => {
+        const formData = new FormData()
+        formData.append('file', e.target.files[0])
+        formData.append('upload_preset', 'bnungpiv')
+    
+        Axios.post("https://api.cloudinary.com/v1_1/dosu7qw8v/image/upload", formData
+        ).then((response) => {
+            console.log(response)
+            setImg(response.data.url)
+        });
+      };
 
     return(
         <form className="create" onSubmit={handleSubmit}>
@@ -80,9 +92,10 @@ export default function TeacherForm() {
             />
 
             <label>Teacher Picture:</label>
+            <img src={img} alt="" />
             <input 
                 type="file"
-                onChange={(e) => setImg(e.target.files)}
+                onChange={uploadImage}
                 className={emptyFields.includes('img') ? "error" : ""}
             />
 
