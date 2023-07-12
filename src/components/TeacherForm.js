@@ -8,14 +8,15 @@ export default function TeacherForm() {
     const [name, setName] = useState('')
     const [country, setCountry] = useState('')
     const [bio, setBio] = useState('')
-    const [img, setImg] = useState('')
+    const [img_url, setImgUrl] = useState('')
+    const [img_id, setImgId] = useState('')
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const teacher = {name, country, bio, img}
+        const teacher = {name, country, bio, img_url, img_id}
 
         const response = await fetch('/api/teachers', {
             method: 'POST',
@@ -37,21 +38,25 @@ export default function TeacherForm() {
             setName('')
             setCountry('')
             setBio('')
-            setImg('')
+            setImgUrl('')
+            setImgId('')
             dispatch({type: 'CREATE_TEACHER', payload: json})
         }
     }
 
-    const uploadImage = (e) => {
-        const formData = new FormData()
-        formData.append('file', e.target.files[0])
-        formData.append('upload_preset', 'bnungpiv')
-    
-        Axios.post("https://api.cloudinary.com/v1_1/dosu7qw8v/image/upload", formData
-        ).then((response) => {
-            console.log(response)
-            setImg(response.data.url)
+    const uploadImage = async (image) => {
+        const formData = new FormData();
+        formData.append('image', image);
+
+        const response = await fetch('/api/images/upload', {
+            method: 'POST',
+            body: formData,
         });
+
+        const data = await response.json();
+        console.log(data);
+        setImgUrl(data.url);
+        setImgId(data.public_id)
       };
 
     return(
@@ -92,11 +97,11 @@ export default function TeacherForm() {
             />
 
             <label>Teacher Picture:</label>
-            <img src={img} alt="" />
+            <img src={img_url} alt="" />
             <input 
                 type="file"
-                onChange={uploadImage}
-                className={emptyFields.includes('img') ? "error" : ""}
+                onChange={(e) => uploadImage(e.target.files[0])}
+                className={emptyFields.includes('img_url') ? "error" : ""}
             />
 
             <button>Add Teacher</button>

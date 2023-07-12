@@ -35,7 +35,20 @@ export default function TeacherDetails({ teacher }) {
         }
       };
 
-    const handleClick = async () => {
+    const handleClick = () => {
+        deleteImage();
+        deleteTeacher();
+    }
+
+    const deleteImage = async () => {
+        const respone = await fetch ('/api/images/'+ teacher.img_id, {
+            method: 'DELETE',
+        });
+        const json = await respone.json();
+        console.log(json);
+    }
+
+    const deleteTeacher = async () => {
         const response = await fetch('/api/teachers/' + teacher._id, {
             method: 'DELETE'
         })
@@ -48,7 +61,7 @@ export default function TeacherDetails({ teacher }) {
 
     return (
         <div className="teacher-details">
-            <img src={teacher.img} className="teacher-img"/>
+            <img src={teacher.img_url} className="teacher-img"/>
             <div>
                 <h4>{teacher.name}</h4>
                 <img className="teacher-flag" src={countrySwitch(teacher.country)} />
