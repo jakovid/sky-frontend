@@ -1,4 +1,8 @@
 /* google font */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 /* layout */
@@ -10,6 +14,7 @@
 .App {
   margin: none;
   padding: none;
+  font-family: "Poppins";
 }
 
 body {
@@ -20,14 +25,7 @@ body {
 header {
   background: #fff;
 }
-header .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 header a {
   text-decoration: none;
 }
