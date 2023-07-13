@@ -6,6 +6,12 @@
   --primary: #0c4737;
   --error: #e7195a;
 }
+
+.App {
+  margin: none;
+  padding: none;
+}
+
 body {
   background: #f1f1f1;
   margin: 0;
@@ -23,13 +29,7 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  color: #333;
   text-decoration: none;
-}
-.pages{
-  max-width: 1400px;
-  padding: 20px;
-  margin: 0 auto;
 }
 
 /* admin page */
