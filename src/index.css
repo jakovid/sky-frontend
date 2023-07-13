@@ -1,4 +1,8 @@
 /* google font */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 /* layout */
@@ -6,6 +10,13 @@
   --primary: #0c4737;
   --error: #e7195a;
 }
+
+.App {
+  margin: none;
+  padding: none;
+  font-family: "Poppins";
+}
+
 body {
   background: #f1f1f1;
   margin: 0;
@@ -14,22 +25,9 @@ body {
 header {
   background: #fff;
 }
-header .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 header a {
-  color: #333;
   text-decoration: none;
-}
-.pages{
-  max-width: 1400px;
-  padding: 20px;
-  margin: 0 auto;
 }
 
 /* admin page */
