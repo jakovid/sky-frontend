@@ -4,6 +4,7 @@ import { useTeachersContext } from '../../hooks/useTeachersContext'
 // components
 import TeacherDetails from "../../components/TeacherDetails"
 import TeacherForm from "../../components/TeacherForm"
+import AdminNavbar from "../../components/AdminNavbar"
 
 export default function AdminTeachers() {
     const { teachers, dispatch } = useTeachersContext()
@@ -27,6 +28,7 @@ export default function AdminTeachers() {
 
     return(
         <div className="admin">
+            <AdminNavbar />
             <div className="teachers">
                 {teachers && teachers.map((teacher) => (
                     <TeacherDetails key={teacher._id} teacher={teacher} />
