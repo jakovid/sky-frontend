@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // pages and components
 import AdminTeachers from './pages/admin/Teachers';
 import Admin from './pages/admin/Admin';
+import LandingPageEng from './pages/english/LandingPageEng';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -12,12 +13,16 @@ function App() {
         <Navbar />
         <div className='pages'>
           <Routes>
-            <Route
+          <Route
               path="/"
+              element={<LandingPageEng />}
+            />
+            <Route
+              path="/admin"
               element={<Admin />}
             />
             <Route 
-              path="/teachers"
+              path="/admin/teachers"
               element={<AdminTeachers />}
             />
           </Routes>
