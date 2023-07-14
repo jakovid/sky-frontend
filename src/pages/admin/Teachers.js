@@ -27,14 +27,16 @@ export default function AdminTeachers() {
     }, [])
 
     return(
-        <div className="admin">
+        <div>
             <AdminNavbar />
-            <div className="teachers">
-                {teachers && teachers.map((teacher) => (
-                    <TeacherDetails key={teacher._id} teacher={teacher} />
-                ))}
-            </div>
+            <div className="admin">
+                <div className="teachers">
+                    {teachers && teachers.map((teacher) => (
+                        <TeacherDetails key={teacher._id} teacher={teacher} />
+                    ))}
+                </div>
             <TeacherForm />
+            </div>
         </div>
     )
 }
