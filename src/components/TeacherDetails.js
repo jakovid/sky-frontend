@@ -60,14 +60,16 @@ export default function TeacherDetails({ teacher }) {
     }
 
     return (
-        <div className="teacher-details">
-            <img src={teacher.img_url} className="teacher-img"/>
-            <div>
-                <h4>{teacher.name}</h4>
-                <img className="teacher-flag" src={countrySwitch(teacher.country)} />
+        <div className="bg-white rounded-lg m-4 p-5 relative shadow-md">
+            <img src={teacher.img_url} className="max-h-40 max-w- "/>
+            <div className="flex gap-3 items-center h-6 w-40">
+                <h4 className="text-lg">{teacher.name}</h4>
+                <img className="h-4" src={countrySwitch(teacher.country)} />
             </div>
-            <p>{teacher.bio}</p>
-            <span onClick={handleClick} ><BsFillTrash3Fill fill="inherit" /></span>
+            <p className="text-sm">{teacher.bio}</p>
+            <span onClick={handleClick} className="flex items-center justify-center absolute top-5 right-5 cursor-pointer p-1 border-red-900 border-2 rounded-full fill-red-900 hover:bg-red-900 hover:fill-white">
+                <BsFillTrash3Fill fill="inherit" />
+            </span>
         </div>
     )
 }
