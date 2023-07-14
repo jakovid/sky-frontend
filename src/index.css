@@ -5,34 +5,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
-/* layout */
-:root {
-  --primary: #0c4737;
-  --error: #e7195a;
-}
-
-.App {
+* {
   margin: none;
   padding: none;
   font-family: "Poppins";
-}
-
-body {
-  background: #f1f1f1;
-  margin: 0;
-  font-family: "Poppins";
-}
-header {
-  background: #fff;
-}
-
-header a {
-  text-decoration: none;
-}
-
-/* admin page */
-.admin {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  color:#FCF5E5;
 }

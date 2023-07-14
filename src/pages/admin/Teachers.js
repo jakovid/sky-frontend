@@ -29,13 +29,14 @@ export default function AdminTeachers() {
     return(
         <div>
             <AdminNavbar />
-            <div className="admin">
-                <div className="teachers">
+            <div className="grid grid-cols-3 gap-24">
+                <div className="col-span-2">
                     {teachers && teachers.map((teacher) => (
                         <TeacherDetails key={teacher._id} teacher={teacher} />
                     ))}
                 </div>
-            <TeacherForm />
+
+                <TeacherForm />
             </div>
         </div>
     )
