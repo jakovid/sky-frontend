@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useTeachersContext } from "../hooks/useTeachersContext";
-import Axios from 'axios';
 
 export default function TeacherForm() {
     const { dispatch } = useTeachersContext()
@@ -60,23 +59,23 @@ export default function TeacherForm() {
       };
 
     return(
-        <form className="create" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="p-4">
             <h3>Add a New Teacher</h3>
 
-            <label>Teacher Name:</label>
+            <label className="block">Teacher Name:</label>
             <input 
                 type="text"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
-                className={emptyFields.includes('name') ? "error" : ""}
+                className={"block p-2 w-full mt-2 mb-4 border-2 rounded-md box-border " + (emptyFields.includes('name') ? "border-red-600" : "border-slate-800")}
             />
 
-            <label>Country:</label>
+            <label className="block">Country:</label>
             <select 
                 type="text"
                 onChange={(e) => setCountry(e.target.value)}
                 value={country}
-                className={emptyFields.includes('country') ? "error" : ""}
+                className={"block p-2 w-full mt-2 mb-4 border-2 rounded-md box-border " + (emptyFields.includes('country') ? "border-red-600" : "border-slate-800")}
             >
                 <option value="">--Select a Country</option>
                 <option value="Taiwan">Taiwan</option>
@@ -89,23 +88,24 @@ export default function TeacherForm() {
                 <option value="South Africa">South Africa</option>
             </select>
 
-            <label>Teacher Bio:</label>
+            <label className="block">Teacher Bio:</label>
             <input 
                 type="text"
                 onChange={(e) => setBio(e.target.value)}
                 value={bio}
+                className="block p-2 w-full mt-2 mb-4 border-slate-800 border-2 rounded-md box-border"
             />
 
-            <label>Teacher Picture:</label>
+            <label className="block">Teacher Picture:</label>
             <img src={img_url} alt="" />
             <input 
                 type="file"
                 onChange={(e) => uploadImage(e.target.files[0])}
-                className={emptyFields.includes('img_url') ? "error" : ""}
+                className={"block p-2 w-full mt-2 mb-4 border-2 rounded-md box-border " + (emptyFields.includes('img_url') ? "border-red-600" : "border-slate-800")}
             />
 
-            <button>Add Teacher</button>
-            { error && <div className="error">{error}</div>}
+            <button className="bg-green-950 border-none text-white p-2 rounded-s-full rounded-e-full cursor-pointer">Add Teacher</button>
+            { error && <div className="p-3 border-2 text-red-600 border-red-600 bg-red-200 rounded-md my-5">{error}</div>}
         </form>
     )
     
