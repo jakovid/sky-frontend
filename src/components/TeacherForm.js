@@ -59,7 +59,7 @@ export default function TeacherForm() {
       };
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="p-4">
             <h3>Add a New Teacher</h3>
 
             <label className="block">Teacher Name:</label>
