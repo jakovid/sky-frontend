@@ -12,16 +12,16 @@ export default function EngNavbar() {
                 </div>
                 <div className="pe-5">
                     <div className="flex flex-row gap-4">
-                        <Link to="/" className="hover:bg-white hover:text-green-950 px-3 py-1 rounded-s-full rounded-e-full">
+                        <Link to="/" className="hover:bg-red-900 hover:text-green-950 px-3 py-1 rounded-s-full rounded-e-full">
                             <p>Home</p>
                         </Link>
-                        <Link to="/about-us" className="hover:bg-white hover:text-green-950 px-3 py-1 rounded-s-full rounded-e-full">
+                        <Link to="/about-us" className="hover:bg-red-900 hover:text-green-950 px-3 py-1 rounded-s-full rounded-e-full">
                             <p>About Us</p>
                         </Link>
-                        <Link to="/our-classes" className="hover:bg-white hover:text-green-950 px-3 py-1 rounded-s-full rounded-e-full">
+                        <Link to="/our-classes" className="hover:bg-red-900 hover:text-green-950 px-3 py-1 rounded-s-full rounded-e-full">
                             <p>Our Classes</p>
                         </Link>
-                        <Link to="/contact-us" className="hover:bg-white hover:text-green-950 px-3 py-1 rounded-s-full rounded-e-full">
+                        <Link to="/contact-us" className="hover:bg-red-900 hover:text-green-950 px-3 py-1 rounded-s-full rounded-e-full">
                             <p>Contact Us</p>
                         </Link>
                     </div>

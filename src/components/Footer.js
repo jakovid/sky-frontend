@@ -1,13 +1,20 @@
 import SkyLogo from '../images/SkyLogo2.webp'
-import {FaFacebook} from 'react-icons/fa'
+import {FaFacebook, FaMapPin} from 'react-icons/fa'
+import {BsTelephone} from 'react-icons/bs'
 
 export default function BuildFooter(){
     return(
-        <footer className='flex flex-row justify-center items-center bg-white gap-10 p-3'>
-            <a href="tel:0225338263" className='text-5xl text-red-900'>02 2533 8263</a>
-            <div className='flex flex-row items-center justify-center'>
-                <img id='english-footer-sky-logo' src={SkyLogo} />
-                <a href='https://www.facebook.com/Skyeducation2008' target="_blank"><FaFacebook className='fill-blue-900 text-6xl' /></a>
+        <footer className='flex flex-row justify-between items-center bg-red-900/90 gap-10 py-3 px-20'>
+            <a href="tel:0225338263" className='text-lg flex gap-2 items-center'><BsTelephone /><div >02 2533 8263</div></a>
+
+            <a className='flex gap-2 cursor-pointer items-center' href='https://goo.gl/maps/jDmTTpKEmqy1w6FY9'>
+                <FaMapPin  />
+                <p >No. 17, Lane 557, Mingshui Rd, Zhongshan District, Taipei City, 10491</p>
+            </a>
+
+            <div className='flex flex-row items-center gap-6 justify-center'>
+                <img className='h-8 bg-[#E0D3AF] pt-1 px-4 rounded-s-full rounded-e-full' src={SkyLogo} />
+                <a href='https://www.facebook.com/Skyeducation2008' target="_blank"><FaFacebook className='text-2xl' /></a>
             </div>
         </footer>
     )
