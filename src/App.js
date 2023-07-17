@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AdminTeachers from './pages/admin/Teachers';
 import Admin from './pages/admin/Admin';
 import LandingPageEng from './pages/english/LandingPageEng';
+import AboutUsEng from './pages/english/AboutUsEng';
 
 function App() {
   return (
@@ -11,9 +12,13 @@ function App() {
       <BrowserRouter>
         <div className='pages'>
           <Routes>
-          <Route
+            <Route
               path="/"
               element={<LandingPageEng />}
+            />
+            <Route
+              path="/about-us"
+              element={<AboutUsEng />}
             />
             <Route
               path="/admin"
