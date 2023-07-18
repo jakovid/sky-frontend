@@ -18,6 +18,9 @@ export default function EngNavbar() {
                         <Link to="/about-us" className="hover:bg-red-900 hover:text-green-950 px-3 py-1 rounded-s-full rounded-e-full">
                             <p>About Us</p>
                         </Link>
+                        <Link to="/our-team" className="hover:bg-red-900 hover:text-green-950 px-3 py-1 rounded-s-full rounded-e-full">
+                            <p>Our Team</p>
+                        </Link>
                         <Link to="/our-classes" className="hover:bg-red-900 hover:text-green-950 px-3 py-1 rounded-s-full rounded-e-full">
                             <p>Our Classes</p>
                         </Link>
