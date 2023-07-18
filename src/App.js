@@ -5,6 +5,7 @@ import AdminTeachers from './pages/admin/Teachers';
 import Admin from './pages/admin/Admin';
 import LandingPageEng from './pages/english/LandingPageEng';
 import AboutUsEng from './pages/english/AboutUsEng';
+import OurTeamEng from './pages/english/OurTeamEng';
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
             <Route
               path="/about-us"
               element={<AboutUsEng />}
+            />
+            <Route
+              path="/our-team"
+              element={<OurTeamEng />}
             />
             <Route
               path="/admin"
