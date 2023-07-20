@@ -1,14 +1,17 @@
 import EngNavbar from "../../components/EngNavbar"
 import BuildHero from "../../components/OurTeam/Hero"
-import BuildTeachers from "../../components/OurTeam/Teachers"
 import BuildFooter from "../../components/Footer"
+import DisplayTeachers from "../../components/OurTeam/DisplayTeachers"
+import BuildIntro from "../../components/OurTeam/Intro"
 
 export default function OurTeamEng(){
+
     return(
         <div>
             <EngNavbar />
             <BuildHero />
-            <BuildTeachers />
+            <BuildIntro />
+            <DisplayTeachers />
             <BuildFooter />
 
         </div>

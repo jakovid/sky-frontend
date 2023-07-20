@@ -9,13 +9,14 @@ export default function TeacherForm() {
     const [bio, setBio] = useState('')
     const [img_url, setImgUrl] = useState('')
     const [img_id, setImgId] = useState('')
+    const [order, setOrder] = useState('')
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const teacher = {name, country, bio, img_url, img_id}
+        const teacher = {name, country, bio, img_url, img_id, order}
 
         const response = await fetch('/api/teachers', {
             method: 'POST',
@@ -39,6 +40,7 @@ export default function TeacherForm() {
             setBio('')
             setImgUrl('')
             setImgId('')
+            setOrder('')
             dispatch({type: 'CREATE_TEACHER', payload: json})
         }
     }
@@ -94,6 +96,14 @@ export default function TeacherForm() {
                 onChange={(e) => setBio(e.target.value)}
                 value={bio}
                 className="block p-2 w-full mt-2 mb-4 border-slate-800 border-2 rounded-md box-border"
+            />
+
+            <label className="block">Teacher Order:</label>
+            <input 
+                type="number"
+                onChange={(e) => setOrder(e.target.value)}
+                value={order}
+                className={"block p-2 w-full mt-2 mb-4 border-2 rounded-md box-border " + (emptyFields.includes('order') ? "border-red-600" : "border-slate-800")}
             />
 
             <label className="block">Teacher Picture:</label>
