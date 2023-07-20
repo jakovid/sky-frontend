@@ -61,7 +61,7 @@ export default function TeacherDetails({ teacher }) {
 
     return (
         <div className="bg-white rounded-lg m-4 p-5 relative shadow-md">
-            <img src={teacher.img_url} className="max-h-40 max-w- "/>
+            <img src={teacher.img_url} className="max-h-40 "/>
             <div className="flex gap-3 items-center h-6 w-40">
                 <h4 className="text-lg">{teacher.name}</h4>
                 <img className="h-4" src={countrySwitch(teacher.country)} />
