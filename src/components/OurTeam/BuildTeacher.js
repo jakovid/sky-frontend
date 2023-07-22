@@ -34,8 +34,8 @@ export default function BuildTeacher({ teacher }) {
 
     return(
         <div className="flex flex-col items-center justify-center rounded-xl gap-2">
-            <div className=' w-44 h-44 flex justify-center items-end' >
-                <img src={teacher.img_url} className="max-h-40"/>
+            <div className=' w-48 h-48 flex justify-center items-end' >
+                <img src={teacher.img_url} className="max-h-48"/>
             </div>
             <div className="flex justify-between items-center w-40 px-3 bg-[#E0D3AF] rounded-s-full rounded-e-full">
                 <h4 className="text-lg text-red-900">{teacher.name}</h4>
