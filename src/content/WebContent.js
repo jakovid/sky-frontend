@@ -24,7 +24,7 @@ export const WebContent = {
         English: "Where they study matters."
     },
     homeHeroSubtitle: {
-        Chinese: "Small Classes. Native Teachers.", 
+        Chinese: "小班制。母語外師。", 
         English: "Small Classes. Native Teachers."
     },
     homeSectionOneTitle: {
