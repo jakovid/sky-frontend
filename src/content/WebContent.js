@@ -63,4 +63,8 @@ export const WebContent = {
         Chinese: "採用自編的書籍 自然發音，聽力, 閱讀, 並持續更新版本。 高階班學生則搭配常春藤雜誌進行多元化教學。", 
         English: "Back in 2008, we believed that the English books used in Taiwanese classrooms were outdated, irrelevant and boring. So, we decided to create our own Sky books. (Phonics, Reading, Grammar)"
     },
+    aboutUsHeroTitle: {
+        Chinese: "",
+        English: ""
+    }
 }
