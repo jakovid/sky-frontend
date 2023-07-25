@@ -116,7 +116,7 @@ export const WebContent = {
         English: "A priority at Sky Education is hiring teachers who are energetic and passionate about teaching. Our teachers bring a high level of energy to the classroom and genuinely care about our students in an out of class. When students are actively learning and constantly being challenged, there is no time to get bored!"
     },
     aboutUsInfoButton: {
-        Chinese: "",
+        Chinese: "搜尋課程！",
         English: "Find a Class Now!"
     },
     ourTeamHeroTitle: {
@@ -220,7 +220,7 @@ export const WebContent = {
         English: "At our highest levels, we focus our classes to maximize speaking and communication. Using monthly magazines written in Taiwan to introduce interesting topics we challenge students to speak for extended periods to demonstrate their knowledge and think critically about new topics and ideas. With our small class sizes, students can speak frequently, not just with the teacher but with each other in small groups, using materials that are interesting and unique."
     },
     ourClassesButtonOne: {
-        Chinese: "",
+        Chinese: "搜尋初階課程",
         English: "Find a Beginner Class"
     },
     ourClassesButtonTwo: {
