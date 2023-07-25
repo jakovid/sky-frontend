@@ -1,6 +1,10 @@
+import { useLanguageContext } from '../../hooks/useTeachersContext copy'
+import { WebContent } from '../../content/WebContent'
 import SkyLogo from '../../images/SkyLogo2.webp';
 
 export default function BuildHero() {
+    const { language, dispatch } = useLanguageContext();
+
     return(
         <div className="w-full flex flex-col">
             <div className="h-96 bg-green-950/90 flex flex-row items-center">
@@ -10,7 +14,7 @@ export default function BuildHero() {
                     </div>
                 </div>
                 <div className="w-1/3 flex flex-col items-center justify-center gap-4">
-                    <div className='text-6xl'>Our Classes</div>
+                    <div className='text-6xl'>{WebContent.ourClassesHeroTitle[language]}</div>
                         
                     <div className='flex items-center justify-center'>
                         <div className='h-64 w-96 bg-cover bg-center border-8 border-red-900 rounded-xl bg-[url("https://cdn.discordapp.com/attachments/989268383751106560/1131858031517372528/jakovid_a_dark_red_and_dark_green_themed_English_classroom_with_5f8d6ec4-549a-4da8-8d65-982efeb85aa0.png")]'></div>
