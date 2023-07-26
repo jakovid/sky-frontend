@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // pages and components
 import AdminTeachers from './pages/admin/Teachers';
 import Admin from './pages/admin/Admin';
-import LandingPageEng from './pages/english/LandingPageEng';
-import AboutUsEng from './pages/english/AboutUsEng';
-import OurTeamEng from './pages/english/OurTeamEng';
-import OurClassesEng from './pages/english/OurClassesEng';
-import ContactUsEng from './pages/english/ContactUsEng';
+import AdminHome from './pages/admin/Home';
+import LandingPageEng from './pages/public/LandingPageEng';
+import AboutUsEng from './pages/public/AboutUsEng';
+import OurTeamEng from './pages/public/OurTeamEng';
+import OurClassesEng from './pages/public/OurClassesEng';
+import ContactUsEng from './pages/public/ContactUsEng';
 
 function App() {
   return (
@@ -38,6 +39,10 @@ function App() {
             <Route
               path="/admin"
               element={<Admin />}
+            />
+            <Route
+              path="/admin/home"
+              element={<AdminHome />}
             />
             <Route 
               path="/admin/teachers"
