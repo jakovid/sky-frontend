@@ -31,6 +31,10 @@ export const WebContent = {
         Chinese: "臺北市中山區",
         English: "Zhongshan District, Taipei"
     },
+    homeHeroButton: {
+        Chinese: "搜尋課程！",
+        English: "Find a Class Now!"
+    },
     homeSectionOneTitle: {
         Chinese: "Sky的學習方程式", 
         English: "Learn English the Sky Way"
@@ -227,4 +231,40 @@ export const WebContent = {
         Chinese: "聯繫我們",
         English: "Contact Us to Join"
     },
+    contactUsHeroTitle: {
+        Chinese: "保持聯繫",
+        English: "Contact Us"
+    },
+    contactUsEmail : {
+        Chinese: "wilmao27@gmail.com",
+        English: "wilmao27@gmail.com"
+    },
+    contactUsPhone: {
+        Chinese: "0225338263",
+        English: "0225338263"
+    },
+    contactUsAddressOne: {
+        Chinese: "明水路557弄17號",
+        English: "No. 17, Lane 557, Mingshui Road"
+    },
+    contactUsAddressTwo: {
+        Chinese: "台北市中山區10491",
+        English: "Zhongshan District, Taipei, 10491"
+    },
+    contactUsFromTitle: {
+        Chinese: "歡迎詢問任何問題．立即報名．",
+        English: "Have Questions? Want to Sign Up?"
+    },
+    contactUsFormSubtitle: {
+        Chinese: "填寫下面的表格、發送電子郵件或致電，我們會盡快回复您！",
+        English: "Fill out the form below, email, or call and we will get back to you as soon as possible!"
+    },
+    contactUsFormButton: {
+        Chinese: "提交",
+        English: "SUBMIT"
+    },
+    footerAddress: {
+        Chinese: "台北市中山區明水路557弄17號10491",
+        English: "No. 17, Lane 557, Mingshui Rd, Zhongshan District, Taipei City, 10491"
+    }
 }
