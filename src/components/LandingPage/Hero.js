@@ -17,7 +17,7 @@ export default function BuildHero() {
                 <p className="text-6xl text-center">{WebContent.homeHeroTitle[language]}</p>
                 <p className="text-xl">{WebContent.homeHeroSubtitle[language]}</p>
                 <p className="text-xs">- {WebContent.homeHeroLocation[language]} -</p>
-                <div className="bg-red-900 px-6 py-2 border-4 border-red-900 rounded-s-full rounded-e-full text-sm cursor-pointer hover:bg-[#E0D3AF] hover:text-red-900">Find a class now!</div>
+                <div className="bg-red-900 px-6 py-2 border-4 border-red-900 rounded-s-full rounded-e-full text-sm cursor-pointer hover:bg-[#E0D3AF] hover:text-red-900">{WebContent.homeHeroButton[language]}</div>
                 <p className="text-xs">- Est. 2008 -</p>
             </div>
 
