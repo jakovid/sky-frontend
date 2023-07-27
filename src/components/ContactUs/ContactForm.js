@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { useLanguageContext } from '../../hooks/useTeachersContext copy'
+import { useLanguageContext } from '../../hooks/useLanguageContext'
 import { WebContent } from '../../content/WebContent'
 
 export default function ContactForm(){

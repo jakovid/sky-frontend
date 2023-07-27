@@ -15,7 +15,7 @@ export const languageReducer = (state, action) => {
 
 export const LanguageContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(languageReducer, {
-        language: "English"
+        language: "english"
     })
     
     return(

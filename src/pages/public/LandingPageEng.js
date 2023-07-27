@@ -5,6 +5,7 @@ import BuildInfo from "../../components/LandingPage/Info"
 import BuildFooter from "../../components/Footer"
 
 export default function LandingPageEng() {
+    
     return(
         <div>
             <EngNavbar />

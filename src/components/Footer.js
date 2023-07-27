@@ -1,7 +1,7 @@
 import SkyLogo from '../images/SkyLogo2.webp'
 import {FaFacebook, FaMapPin} from 'react-icons/fa'
 import {BsTelephone} from 'react-icons/bs'
-import { useLanguageContext } from '../hooks/useTeachersContext copy'
+import { useLanguageContext } from '../hooks/useLanguageContext'
 import { WebContent } from '../content/WebContent'
 
 export default function BuildFooter(){

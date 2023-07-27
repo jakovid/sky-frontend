@@ -1,10 +1,20 @@
 import SkyLogo from '../../images/SkyLogo2.webp'
-import { useLanguageContext } from '../../hooks/useTeachersContext copy'
-import { WebContent } from '../../content/WebContent'
+import { useLanguageContext } from '../../hooks/useLanguageContext'
+import { useContentsContext } from '../../hooks/useContentsContext'
 
 
 export default function BuildHero() {
-    const { language, dispatch } = useLanguageContext();
+    const { language } = useLanguageContext();
+    const { contents } = useContentsContext()
+    
+    let title = null, subtitle = null, location = null, button = null
+
+    if (contents) {
+        title = contents[5][language];
+        subtitle = contents[6][language];
+        location = contents[7][language];
+        button = contents[8][language];
+    }
 
     return(
         <div className="grid grid-cols-3 h-96">
@@ -13,11 +23,11 @@ export default function BuildHero() {
                     <img src={SkyLogo} />
                 </div>
             </div>
-            <div className="bg-green-950/90 flex flex-col justify-center items-center px-6 gap-3">
-                <p className="text-6xl text-center">{WebContent.homeHeroTitle[language]}</p>
-                <p className="text-xl">{WebContent.homeHeroSubtitle[language]}</p>
-                <p className="text-xs">- {WebContent.homeHeroLocation[language]} -</p>
-                <div className="bg-red-900 px-6 py-2 border-4 border-red-900 rounded-s-full rounded-e-full text-sm cursor-pointer hover:bg-[#E0D3AF] hover:text-red-900">{WebContent.homeHeroButton[language]}</div>
+            <div className="bg-green-950/90 flex flex-col justify-center items-center text-center px-6 gap-3">
+                <p className="text-6xl">{title}</p>
+                <p className="text-xl">{subtitle}</p>
+                <p className="text-xs">- {location}-</p>
+                <div className="bg-red-900 px-6 py-2 border-4 border-red-900 rounded-s-full rounded-e-full text-sm cursor-pointer hover:bg-[#E0D3AF] hover:text-red-900">{button}</div>
                 <p className="text-xs">- Est. 2008 -</p>
             </div>
 
