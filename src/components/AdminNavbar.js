@@ -4,7 +4,9 @@ export default function AdminNavbar() {
     return (
         <header className="bg-blue-950">
             <div className="flex justify-center gap-4 p-4">
-                
+                <Link to="/admin">
+                    <h1 className="text-xl border-4 p-2 rounded-s-full rounded-e-full">Admin</h1>
+                </Link>
                 <Link to="/admin/teachers">
                     <h1 className="text-xl border-4 p-2 rounded-s-full rounded-e-full">Manage Teachers</h1>
                 </Link>

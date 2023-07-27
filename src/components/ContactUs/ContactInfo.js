@@ -1,7 +1,7 @@
 import {FaMapPin} from 'react-icons/fa'
 import {BsTelephone} from 'react-icons/bs'
 import {AiOutlineMail} from 'react-icons/ai'
-import { useLanguageContext } from '../../hooks/useTeachersContext copy'
+import { useLanguageContext } from '../../hooks/useLanguageContext'
 import { WebContent } from '../../content/WebContent'
 
 
