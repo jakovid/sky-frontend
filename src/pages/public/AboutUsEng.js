@@ -5,6 +5,7 @@ import BuildInfo from "../../components/AboutUs/Info"
 import BuildFooter from "../../components/Footer"
 
 export default function AboutUsEng() {
+    
     return(
         <div>
             <EngNavbar />

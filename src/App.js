@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react';
+import { useContentsContext } from './hooks/useContentsContext';
 
 // pages and components
 import AdminTeachers from './pages/admin/Teachers';
@@ -11,6 +13,25 @@ import OurClassesEng from './pages/public/OurClassesEng';
 import ContactUsEng from './pages/public/ContactUsEng';
 
 function App() {
+  const { dispatch } = useContentsContext()
+    
+
+    useEffect(() => {
+        const fetchContents = async() => {
+            const response = await fetch('/api/content')
+            const json = await response.json()
+
+            if(response.ok) {
+                dispatch({
+                    type: 'SET_CONTENTS',
+                    payload: json
+                })
+            }
+        }
+
+        fetchContents()
+    }, [])
+
   return (
     <div className="App">
       <BrowserRouter>
