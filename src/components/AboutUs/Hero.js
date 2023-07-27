@@ -1,9 +1,16 @@
 import SkyLogo from '../../images/SkyLogo2.webp'
-import { useLanguageContext } from '../../hooks/useTeachersContext copy'
-import { WebContent } from '../../content/WebContent'
+import { useLanguageContext } from '../../hooks/useLanguageContext'
+import { useContentsContext } from '../../hooks/useContentsContext';
 
 export default function BuildHero() {
-    const { language, dispatch } = useLanguageContext();
+    const { language } = useLanguageContext();
+    const { contents } = useContentsContext();
+
+    let title = null
+
+    if (contents) {
+        title = contents[18][language]
+    }
 
     return(
         <div className="w-full flex flex-col"> 
@@ -14,7 +21,7 @@ export default function BuildHero() {
                         </div>
                     </div>
                     <div className="w-1/3 flex flex-col items-center justify-center gap-4">
-                        <div className='text-6xl'>{WebContent.aboutUsHeroTitle[language]}</div>
+                        <div className='text-6xl'>{title}</div>
                         
                         <div className='flex items-center justify-center'>
                             <img className="h-64 rounded-full border-8 border-red-900 z-10" src="https://cdn.discordapp.com/attachments/989268383751106560/1130489036931346522/jakovid_a_student_raising_her_hand_in_an_English_classroom_in_T_f508f6cb-8ad7-4951-bbed-5e075db1b282.png"/>
