@@ -5,12 +5,7 @@ import AdminEditForm from "../../components/AdminComps/AdminEditForm";
 
 
 export default function AdminHome() {
-    const { contents, dispatch } = useContentsContext();
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log('Submit')
-    }
+    const { contents } = useContentsContext();
 
     return(
         <div>
@@ -20,7 +15,7 @@ export default function AdminHome() {
                 
                 <div className="bg-blue-950/90 flex flex-col items-center py-2 gap-2">
                 {contents && contents.slice(5, 18).map((content) => (
-                    <AdminEditForm key={content._id} content={content} dispatch={dispatch} />
+                    <AdminEditForm key={content._id} content={content} />
                 ))}
                 </div>
             </div>
