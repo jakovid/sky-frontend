@@ -17,14 +17,18 @@ export default function AdminEditForm({ content }) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ english, chinese})
+            body: JSON.stringify({ chinese, english })
         })
         const json = await response.json()
         console.log('updating')
 
         if (response.ok) {
-            dispatch({ type: 'PATCH_CONTENT', payload: json })
+            sendDispatch(json);
         }
+    }
+
+    const sendDispatch = (json) => {
+        dispatch({ type: 'PATCH_CONTENT', payload: json })
     }
 
     return(
