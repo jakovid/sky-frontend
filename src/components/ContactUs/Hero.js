@@ -1,10 +1,17 @@
 import { useLanguageContext } from '../../hooks/useLanguageContext'
-import { WebContent } from '../../content/WebContent'
+import { useContentsContext } from '../../hooks/useContentsContext';
 
 import SkyLogo from '../../images/SkyLogo2.webp';
 
 export default function BuildHero() {
-    const { language, dispatch } = useLanguageContext();
+    const { language } = useLanguageContext();
+    const { contents } = useContentsContext();
+
+    let title = null
+
+    if(contents) {
+        title = contents.find(content => content.name === 'contactUsHeroTitle')[language]
+    }
 
     return(
         <div className="w-full flex flex-col">
@@ -15,7 +22,7 @@ export default function BuildHero() {
                     </div>
                 </div>
                 <div className="w-1/3 flex flex-col items-center justify-center gap-4">
-                    <div className='text-6xl'>{WebContent.contactUsHeroTitle[language]}</div>
+                    <div className='text-6xl'>{title}</div>
                         
                     <div className='flex items-center justify-center'>
                         <div className='h-64 w-96 bg-cover bg-center border-8 border-red-900 rounded-xl bg-[url("https://cdn.discordapp.com/attachments/989268383751106560/1132229925689110598/jakovid_a_dark_red_and_dark_green_theme_american_english_teache_5524951e-1ec7-4d6d-9712-043324dd4fce.png")]'></div>
