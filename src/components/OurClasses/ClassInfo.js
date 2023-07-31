@@ -8,16 +8,16 @@ export default function BuildClassInfo(){
     let mainText = null, timeTitle = null, timeOneTitle = null, timeOneText = null, timeTwoTitle = null, timeTwoText = null, timeThreeTitle = null, timeThreeText = null, timeFourTitle = null, timeFourText = null
 
     if (contents) {
-        mainText = contents[40][language];
-        timeTitle = contents[41][language];
-        timeOneTitle = contents[42][language];
-        timeOneText = contents[43][language];
-        timeTwoTitle = contents[44][language];
-        timeTwoText = contents[45][language];
-        timeThreeTitle = contents[46][language];
-        timeThreeText = contents[47][language];
-        timeFourTitle = contents[48][language];
-        timeFourText = contents[49][language];
+        mainText = contents.find(content => content.name === 'ourClassesClassTimeText')[language];
+        timeTitle = contents.find(content => content.name === 'ourClassesClassTimeTitle')[language];
+        timeOneTitle = contents.find(content => content.name === 'ourClassesClassTimeOneTitle')[language];
+        timeOneText = contents.find(content => content.name === 'ourClassesClassTimeOneText')[language];
+        timeTwoTitle = contents.find(content => content.name === 'ourClassesClassTimeTwoTitle')[language];
+        timeTwoText = contents.find(content => content.name === 'ourClassesClassTimeTwoText')[language];
+        timeThreeTitle = contents.find(content => content.name === 'ourClassesClassTimeThreeTitle')[language];
+        timeThreeText = contents.find(content => content.name === 'ourClassesClassTimeThreeText')[language];
+        timeFourTitle = contents.find(content => content.name === 'ourClassesClassTimeFourTitle')[language];
+        timeFourText = contents.find(content => content.name === 'ourClassesClassTimeFourText')[language];
     }
 
     return(

@@ -8,9 +8,14 @@ export default function BuildWhyLearn() {
     let title = null, subtitle = null, text = null
 
     if (contents) {
-        title = contents[9][language];
-        subtitle = contents[10][language];
-        text = contents[11][language];
+        const whyTitle = contents.find(content => content.name === 'homeSectionOneTitle');
+        if(whyTitle) {title = whyTitle[language]}
+
+        const whySubtitle = contents.find(content => content.name === 'homeSectionOneSubtitle');
+        if(whySubtitle) {subtitle = whySubtitle[language]}
+        
+        const whyText = contents.find(content => content.name === 'homeSectionOneText');
+        if(whyText) {text = whyText[language]}
     }
 
     let currentMonth = new Date().getMonth() + 1;

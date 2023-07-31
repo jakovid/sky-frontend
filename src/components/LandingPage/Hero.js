@@ -2,7 +2,6 @@ import SkyLogo from '../../images/SkyLogo2.webp'
 import { useLanguageContext } from '../../hooks/useLanguageContext'
 import { useContentsContext } from '../../hooks/useContentsContext'
 
-
 export default function BuildHero() {
     const { language } = useLanguageContext();
     const { contents } = useContentsContext()
@@ -10,10 +9,17 @@ export default function BuildHero() {
     let title = null, subtitle = null, location = null, button = null
 
     if (contents) {
-        title = contents[5][language];
-        subtitle = contents[6][language];
-        location = contents[7][language];
-        button = contents[8][language];
+        const heroTitle = contents.find(content => content.name === 'homeHeroTitle');
+        if (heroTitle) { title = heroTitle[language]}
+
+        const heroSubtitle = contents.find(content => content.name === 'homeHeroSubtitle');
+        if (heroSubtitle) { subtitle = heroSubtitle[language]}
+
+        const heroLocation = contents.find(content => content.name === 'homeHeroLocation');
+        if (heroLocation) { location = heroLocation[language]}
+        
+        const heroButton = contents.find(content => content.name === 'homeHeroButton');
+        if (heroButton) { button = heroButton[language]}
     }
 
     return(
