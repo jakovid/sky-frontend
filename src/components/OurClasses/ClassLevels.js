@@ -8,14 +8,14 @@ export default function BuildClassLevels(){
     let levelOneTitle = null, levelOneText = null, levelTwoTitle = null, levelTwoText = null, levelThreeTitle = null, levelThreeText = null, buttonOne = null, buttonTwo = null
 
     if (contents) {
-        levelOneTitle = contents[50][language];
-        levelOneText = contents[51][language];
-        levelTwoTitle = contents[52][language];
-        levelTwoText = contents[53][language];
-        levelThreeTitle = contents[54][language];
-        levelThreeText = contents[55][language];
-        buttonOne = contents[56][language];
-        buttonTwo = contents[57][language];
+        levelOneTitle = contents.find(content => content.name === 'ourClassesInfoOneTitle')[language];
+        levelOneText = contents.find(content => content.name === 'ourClassesInfoOneText')[language];
+        levelTwoTitle = contents.find(content => content.name === 'ourClassesInfoTwoTitle')[language];
+        levelTwoText = contents.find(content => content.name === 'ourClassesInfoTwoText')[language];
+        levelThreeTitle = contents.find(content => content.name === 'ourClassesInfoThreeTitle')[language];
+        levelThreeText = contents.find(content => content.name === 'ourClassesInfoThreeText')[language];
+        buttonOne = contents.find(content => content.name === 'ourClassesButtonOne')[language];
+        buttonTwo = contents.find(content => content.name === 'ourClassesButtonTwo')[language];
     }
 
     return(

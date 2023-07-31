@@ -11,13 +11,13 @@ export default function BuildKeys() {
     let keysTitle = null, keyTitleOne = null, keyTextOne = null, keyTitleTwo = null, keyTextTwo = null, keyTitleThree = null, keyTextThree = null
 
     if (contents) {
-        keysTitle = contents[19][language];
-        keyTitleOne = contents[20][language]; 
-        keyTextOne = contents[21][language]; 
-        keyTitleTwo = contents[22][language];
-        keyTextTwo = contents[23][language];
-        keyTitleThree = contents[24][language];
-        keyTextThree = contents[25][language];
+        keysTitle = contents.find(content => content.name === 'aboutUsKeysTitle')[language];
+        keyTitleOne = contents.find(content => content.name === 'aboutUsKeyOneTitle')[language]; 
+        keyTextOne = contents.find(content => content.name === 'aboutUsKeyOneText')[language]; 
+        keyTitleTwo = contents.find(content => content.name === 'aboutUsKeyTwoTitle')[language];
+        keyTextTwo = contents.find(content => content.name === 'aboutUsKeyTwoText')[language];
+        keyTitleThree = contents.find(content => content.name === 'aboutUsKeyThreeTitle')[language];
+        keyTextThree = contents.find(content => content.name === 'aboutUsKeyThreeText')[language];
     }
 
     return(

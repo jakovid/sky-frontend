@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useLanguageContext } from '../../hooks/useLanguageContext'
-import { WebContent } from '../../content/WebContent'
+import { useContentsContext } from "../../hooks/useContentsContext";
 
 export default function ContactForm(){
     const form = useRef();
@@ -17,17 +17,26 @@ export default function ContactForm(){
             })
     };
 
-    const { language, dispatch } = useLanguageContext();
+    const { language } = useLanguageContext();
+    const { contents } = useContentsContext();
+
+    let title = null, subtitle = null, button = null
+
+    if(contents) {
+        title = contents.find(content => content.name === 'contactUsEmail')[language];
+        subtitle = contents.find(content => content.name === 'contactUsEmail')[language];
+        button = contents.find(content => content.name === 'contactUsEmail')[language];
+    }
 
     return(
         <div className="bg-green-950/90 flex justify-center items-center py-10">
             <div className="bg-green-950 w-2/3 p-6 flex flex-col gap-8 border-8 border-red-900 rounded-xl">
                     <div className="flex flex-col text-center gap-2">
                         <div className="text-4xl">
-                            {WebContent.contactUsFromTitle[language]}
+                            {title}
                         </div>
                         <div className="text-sm">
-                            {WebContent.contactUsFormSubtitle[language]}
+                            {subtitle}
                         </div>
                     </div>
                     <form className="grid grid-cols-2 gap-4" ref={form} onSubmit={sendEmail}>
@@ -56,7 +65,7 @@ export default function ContactForm(){
                             <textarea type='text' name="user_message" className='bg-[#E0D3AF] placeholder-red-900/50 text-green-950 p-4 rounded-xl focus:outline-red-900' rows='7' id='message' placeholder={language == "English" ? "Write your message here..." : "在這裡寫下您的信息..."} />
                         </div>
                         <div className="flex col-span-2 justify-center items-center">
-                        <button type='submit' value="Send" className='bg-red-900 px-6 py-2 rounded-s-full rounded-e-full text-2xl cursor-pointer border-8 border-red-900 hover:text-green-950 hover:bg-[#E0D3AF]'>{WebContent.contactUsFormButton[language]}</button>
+                        <button type='submit' value="Send" className='bg-red-900 px-6 py-2 rounded-s-full rounded-e-full text-2xl cursor-pointer border-8 border-red-900 hover:text-green-950 hover:bg-[#E0D3AF]'>{button}</button>
                         </div>
                     </form>
             </div>

@@ -8,12 +8,12 @@ export default function BuildInfo() {
     let titleOne = null, textOne = null, titleTwo = null, textTwo = null, titleThree = null, textThree = null
 
     if (contents) {
-        titleOne = contents[12][language];
-        textOne = contents[13][language];
-        titleTwo = contents[14][language];
-        textTwo = contents[15][language];
-        titleThree = contents[16][language];
-        textThree = contents[17][language];
+        const infoTitleOne = contents.find(content => content.name === 'homeSectionTwoBoxOneTitle');
+        const infoTextOne = contents.find(content => content.name === 'homeSectionTwoBoxOneText');
+        const infoTitleTwo = contents.find(content => content.name === 'homeSectionTwoBoxTwoTitle');
+        const infoTextTwo = contents.find(content => content.name === 'homeSectionTwoBoxTwoText');
+        const infoTitleThree = contents.find(content => content.name === 'homeSectionTwoBoxThreeTitle');
+        const infoTextThree = contents.find(content => content.name === 'homeSectionTwoBoxThreeText');
     }
 
     return(
