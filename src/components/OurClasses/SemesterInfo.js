@@ -8,11 +8,11 @@ export default function BuildSemesterInfo(){
     let title = null, semesterOneTitle = null, semesterOneText = null, semesterTwoTitle = null, semesterTwoText = null
 
     if (contents) {
-        title = contents[35][language];
-        semesterOneTitle = contents[36][language];
-        semesterOneText = contents[37][language];
-        semesterTwoTitle = contents[38][language];
-        semesterTwoText = contents[39][language];
+        title = contents.find(content => content.name === 'ourClassesSemestersTitle');
+        semesterOneTitle = contents.find(content => content.name === 'ourClassesSemesterOneTitle')[language];
+        semesterOneText = contents.find(content => content.name === 'ourClassesSemesterOneText')[language];
+        semesterTwoTitle = contents.find(content => content.name === 'ourClassesSemesterTwoTitle')[language];
+        semesterTwoText = contents.find(content => content.name === 'ourClassesSemesterTwoText')[language];
     }
 
     return(

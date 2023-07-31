@@ -19,8 +19,9 @@ export const contentsReducer = (state, action) => {
         case 'PATCH_CONTENT' :
             return {
                 contents: state.contents.map((content) =>
-                    content._id === action.payload._id ? action.payload : content
-                ),
+                    content._id === action.payload._id ? {...content, ...action.payload } : content
+                )
+                
             }
         default:
             return state
