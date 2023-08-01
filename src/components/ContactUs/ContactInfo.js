@@ -12,10 +12,17 @@ export default function BuildContactInfo(){
     let email = null, phone = null, addressOne = null, addressTwo = null
 
     if (contents) {
-        email = contents.find(content => content.name === 'contactUsEmail')[language];
-        phone = contents.find(content => content.name === 'contactUsPhone')[language];
-        addressOne = contents.find(content => content.name === 'contactUsAddressOne')[language];
-        addressTwo = contents.find(content => content.name === 'contactUsAddressTwo')[language];
+        const contactUsEmail = contents.find(content => content.name === 'contactUsEmail');
+        if (contactUsEmail) { email = contactUsEmail[language] };
+
+        const contactUsPhone = contents.find(content => content.name === 'contactUsPhone');
+        if (contactUsPhone) { phone = contactUsPhone[language] };
+
+        const contactUsAddressOne = contents.find(content => content.name === 'contactUsAddressOne');
+        if (contactUsAddressOne) { addressOne = contactUsAddressOne[language]};
+
+        const contactUsAddressTwo = contents.find(content => content.name === 'contactUsAddressTwo');
+        if (contactUsAddressTwo) { addressTwo = contactUsAddressTwo[language] };
 
     }
 

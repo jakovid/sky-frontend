@@ -9,11 +9,20 @@ export default function BuildInfo(){
     let titleOne = null, textOne = null, titleTwo = null, textTwo = null, button = null
     
     if(contents) {
-        titleOne = contents.find(content => content.name === 'aboutUsInfoOneTitle')[language];
-        textOne = contents.find(content => content.name === 'aboutUsInfoOneText')[language];
-        titleTwo = contents.find(content => content.name === 'aboutUsInfoTwoTitle')[language];
-        textTwo = contents.find(content => content.name === 'aboutUsInfoTwoText')[language];
-        button = contents.find(content => content.name === 'aboutUsInfoButton')[language];
+        const aboutUsTitleOne = contents.find(content => content.name === 'aboutUsInfoOneTitle');
+        if (aboutUsTitleOne) { titleOne = aboutUsTitleOne[language]}
+
+        const aboutUsTextOne = contents.find(content => content.name === 'aboutUsInfoOneText');
+        if (aboutUsTextOne) { textOne = aboutUsTextOne[language]}
+
+        const aboutUsTitleTwo = contents.find(content => content.name === 'aboutUsInfoTwoTitle');
+        if (aboutUsTitleTwo) { titleTwo = aboutUsTitleTwo[language]}
+
+        const aboutUsTextTwo = contents.find(content => content.name === 'aboutUsInfoTwoText');
+        if (aboutUsTextTwo) { textTwo = aboutUsTextTwo[language]}
+
+        const aboutUsButton = contents.find(content => content.name === 'aboutUsInfoButton');
+        if (aboutUsButton) { button = aboutUsButton[language]}
     }
 
     return(

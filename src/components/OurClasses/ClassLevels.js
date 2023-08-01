@@ -8,14 +8,29 @@ export default function BuildClassLevels(){
     let levelOneTitle = null, levelOneText = null, levelTwoTitle = null, levelTwoText = null, levelThreeTitle = null, levelThreeText = null, buttonOne = null, buttonTwo = null
 
     if (contents) {
-        levelOneTitle = contents.find(content => content.name === 'ourClassesInfoOneTitle')[language];
-        levelOneText = contents.find(content => content.name === 'ourClassesInfoOneText')[language];
-        levelTwoTitle = contents.find(content => content.name === 'ourClassesInfoTwoTitle')[language];
-        levelTwoText = contents.find(content => content.name === 'ourClassesInfoTwoText')[language];
-        levelThreeTitle = contents.find(content => content.name === 'ourClassesInfoThreeTitle')[language];
-        levelThreeText = contents.find(content => content.name === 'ourClassesInfoThreeText')[language];
-        buttonOne = contents.find(content => content.name === 'ourClassesButtonOne')[language];
-        buttonTwo = contents.find(content => content.name === 'ourClassesButtonTwo')[language];
+        const ourClassesLevelOneTitle = contents.find(content => content.name === 'ourClassesInfoOneTitle');
+        if (ourClassesLevelOneTitle) { levelOneTitle = ourClassesLevelOneTitle[language]};
+
+        const ourClassesLevelOneText = contents.find(content => content.name === 'ourClassesInfoOneText');
+        if (ourClassesLevelOneText) { levelOneText = ourClassesLevelOneText[language]};
+
+        const ourClassesLevelTwoTitle = contents.find(content => content.name === 'ourClassesInfoTwoTitle');
+        if (ourClassesLevelTwoTitle) { levelTwoTitle = ourClassesLevelTwoTitle[language]};
+
+        const ourClassesLevelTwoText = contents.find(content => content.name === 'ourClassesInfoTwoText');
+        if (ourClassesLevelTwoText) { levelTwoText = ourClassesLevelTwoText[language]};
+
+        const ourClassesLevelThreeTitle = contents.find(content => content.name === 'ourClassesInfoThreeTitle');
+        if (ourClassesLevelThreeTitle) { levelThreeTitle = ourClassesLevelThreeTitle[language]};
+
+        const ourClassesLevelThreeText = contents.find(content => content.name === 'ourClassesInfoThreeText');
+        if (ourClassesLevelThreeText) { levelThreeText = ourClassesLevelThreeText[language]};
+
+        const ourClassesButtonOne = contents.find(content => content.name === 'ourClassesButtonOne');
+        if (ourClassesButtonOne) { buttonOne = ourClassesButtonOne[language]};
+
+        const ourClassesButtonTwo = contents.find(content => content.name === 'ourClassesButtonTwo');
+        if (ourClassesButtonTwo) { buttonTwo = ourClassesButtonTwo[language]};
     }
 
     return(
