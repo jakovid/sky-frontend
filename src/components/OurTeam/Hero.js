@@ -9,7 +9,8 @@ export default function BuildHero() {
     let title = null
 
     if (contents) {
-        title = contents.find(content => content.name === 'ourTeamHeroTitle')[language]
+        const ourTeamTitle = contents.find(content => content.name === 'ourTeamHeroTitle');
+        if (ourTeamTitle) { title = ourTeamTitle[language]};
     }
 
     return(
