@@ -11,13 +11,26 @@ export default function BuildKeys() {
     let keysTitle = null, keyTitleOne = null, keyTextOne = null, keyTitleTwo = null, keyTextTwo = null, keyTitleThree = null, keyTextThree = null
 
     if (contents) {
-        keysTitle = contents.find(content => content.name === 'aboutUsKeysTitle')[language];
-        keyTitleOne = contents.find(content => content.name === 'aboutUsKeyOneTitle')[language]; 
-        keyTextOne = contents.find(content => content.name === 'aboutUsKeyOneText')[language]; 
-        keyTitleTwo = contents.find(content => content.name === 'aboutUsKeyTwoTitle')[language];
-        keyTextTwo = contents.find(content => content.name === 'aboutUsKeyTwoText')[language];
-        keyTitleThree = contents.find(content => content.name === 'aboutUsKeyThreeTitle')[language];
-        keyTextThree = contents.find(content => content.name === 'aboutUsKeyThreeText')[language];
+        const aboutUsKeysTitle = contents.find(content => content.name === 'aboutUsKeysTitle');
+        if (aboutUsKeysTitle) { keysTitle = aboutUsKeysTitle[language]}
+
+        const aboutUsKeyTitleOne = contents.find(content => content.name === 'aboutUsKeyOneTitle');
+        if (aboutUsKeyTitleOne) { keyTitleOne = aboutUsKeyTitleOne[language]}
+
+        const aboutUsKeyTextOne = contents.find(content => content.name === 'aboutUsKeyOneText');
+        if (aboutUsKeyTextOne) { keyTextOne = aboutUsKeyTextOne[language]}
+
+        const aboutUsKeyTitleTwo = contents.find(content => content.name === 'aboutUsKeyTwoTitle');
+        if (aboutUsKeyTitleTwo) {keyTitleTwo = aboutUsKeyTitleTwo[language]}
+
+        const aboutUsKeyTextTwo = contents.find(content => content.name === 'aboutUsKeyTwoText');
+        if (aboutUsKeyTextTwo) { keyTextTwo = aboutUsKeyTextTwo[language]}
+
+        const aboutUsKeyTitleThree = contents.find(content => content.name === 'aboutUsKeyThreeTitle');
+        if (aboutUsKeyTitleThree) { keyTitleThree = aboutUsKeyTitleThree[language]}
+
+        const aboutUsKeyTextThree = contents.find(content => content.name === 'aboutUsKeyThreeText');
+        if (aboutUsKeyTextThree) { keyTextThree = aboutUsKeyTextThree[language]}
     }
 
     return(

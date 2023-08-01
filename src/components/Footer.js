@@ -2,10 +2,18 @@ import SkyLogo from '../images/SkyLogo2.webp'
 import {FaFacebook, FaMapPin} from 'react-icons/fa'
 import {BsTelephone} from 'react-icons/bs'
 import { useLanguageContext } from '../hooks/useLanguageContext'
-import { WebContent } from '../content/WebContent'
+import { useContentsContext } from '../hooks/useContentsContext'
 
 export default function BuildFooter(){
-    const { language, dispatch } = useLanguageContext();
+    const { language } = useLanguageContext();
+    const { contents } = useContentsContext();
+
+    let address = null;
+
+    if (contents){
+        const footerAddress = contents.find(content => content.name === 'footerAddress');
+        if (footerAddress) { address = footerAddress[language]};
+    }
 
     return(
         <footer className='flex flex-row justify-between items-center bg-red-900/90 gap-10 py-3 px-20'>
@@ -13,7 +21,7 @@ export default function BuildFooter(){
 
             <a className='flex gap-2 cursor-pointer items-center' href='https://goo.gl/maps/jDmTTpKEmqy1w6FY9'>
                 <FaMapPin  />
-                <p >{WebContent.footerAddress[language]}</p>
+                <p >{address}</p>
             </a>
 
             <div className='flex flex-row items-center gap-6 justify-center'>

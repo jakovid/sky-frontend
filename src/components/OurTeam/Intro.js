@@ -9,8 +9,11 @@ export default function BuildIntro() {
     let title = null, text = null
 
     if (contents) {
-        title = contents.find(content => content.name === 'ourTeamIntroTitle')[language];
-        text = contents.find(content => content.name === 'ourTeamIntroText')[language]
+        const ourTeamTitle = contents.find(content => content.name === 'ourTeamIntroTitle');
+        if (ourTeamTitle) { title = ourTeamTitle[language]};
+
+        const ourTeamText = contents.find(content => content.name === 'ourTeamIntroText');
+        if (ourTeamText) { text = ourTeamText[language]};
     }
 
     return(
