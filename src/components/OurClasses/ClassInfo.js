@@ -8,16 +8,35 @@ export default function BuildClassInfo(){
     let mainText = null, timeTitle = null, timeOneTitle = null, timeOneText = null, timeTwoTitle = null, timeTwoText = null, timeThreeTitle = null, timeThreeText = null, timeFourTitle = null, timeFourText = null
 
     if (contents) {
-        mainText = contents.find(content => content.name === 'ourClassesClassTimeText')[language];
-        timeTitle = contents.find(content => content.name === 'ourClassesClassTimeTitle')[language];
-        timeOneTitle = contents.find(content => content.name === 'ourClassesClassTimeOneTitle')[language];
-        timeOneText = contents.find(content => content.name === 'ourClassesClassTimeOneText')[language];
-        timeTwoTitle = contents.find(content => content.name === 'ourClassesClassTimeTwoTitle')[language];
-        timeTwoText = contents.find(content => content.name === 'ourClassesClassTimeTwoText')[language];
-        timeThreeTitle = contents.find(content => content.name === 'ourClassesClassTimeThreeTitle')[language];
-        timeThreeText = contents.find(content => content.name === 'ourClassesClassTimeThreeText')[language];
-        timeFourTitle = contents.find(content => content.name === 'ourClassesClassTimeFourTitle')[language];
-        timeFourText = contents.find(content => content.name === 'ourClassesClassTimeFourText')[language];
+        const ourClassesMainText = contents.find(content => content.name === 'ourClassesClassTimeText');
+        if (ourClassesMainText) { mainText = ourClassesMainText[language]};
+
+        const ourClassesTimeTitle = contents.find(content => content.name === 'ourClassesClassTimeTitle');
+        if (ourClassesTimeTitle) { timeTitle = ourClassesTimeTitle[language]};
+
+        const ourClassesTimeOneTitle = contents.find(content => content.name === 'ourClassesClassTimeOneTitle');
+        if (ourClassesTimeOneTitle) { timeOneTitle = ourClassesTimeOneTitle[language]};
+
+        const ourClassesTimeOneText = contents.find(content => content.name === 'ourClassesClassTimeOneText');
+        if (ourClassesTimeOneText) { timeOneText = ourClassesTimeOneText[language]};
+
+        const ourClassesTimeTwoTitle = contents.find(content => content.name === 'ourClassesClassTimeTwoTitle');
+        if (ourClassesTimeTwoTitle) { timeTwoTitle = ourClassesTimeTwoTitle[language]};
+
+        const ourClassesTimeTwoText = contents.find(content => content.name === 'ourClassesClassTimeTwoText');
+        if (ourClassesTimeTwoText) { timeTwoText = ourClassesTimeTwoText[language]};
+
+        const ourClassesTimeThreeTitle = contents.find(content => content.name === 'ourClassesClassTimeThreeTitle');
+        if (ourClassesTimeThreeTitle) { timeThreeTitle = ourClassesTimeThreeTitle[language]};
+
+        const ourClassesTimeThreeText = contents.find(content => content.name === 'ourClassesClassTimeThreeText');
+        if (ourClassesTimeThreeText) { timeThreeText = ourClassesTimeThreeText[language]};
+
+        const ourClassesTimeFourTitle = contents.find(content => content.name === 'ourClassesClassTimeFourTitle');
+        if (ourClassesTimeFourTitle) { timeFourTitle = ourClassesTimeFourTitle[language]};
+
+        const ourClassesTimeFourText = contents.find(content => content.name === 'ourClassesClassTimeFourText');
+        if (ourClassesTimeFourText) { timeFourText = ourClassesTimeFourText[language]};
     }
 
     return(

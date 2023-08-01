@@ -8,11 +8,20 @@ export default function BuildSemesterInfo(){
     let title = null, semesterOneTitle = null, semesterOneText = null, semesterTwoTitle = null, semesterTwoText = null
 
     if (contents) {
-        title = contents.find(content => content.name === 'ourClassesSemestersTitle');
-        semesterOneTitle = contents.find(content => content.name === 'ourClassesSemesterOneTitle')[language];
-        semesterOneText = contents.find(content => content.name === 'ourClassesSemesterOneText')[language];
-        semesterTwoTitle = contents.find(content => content.name === 'ourClassesSemesterTwoTitle')[language];
-        semesterTwoText = contents.find(content => content.name === 'ourClassesSemesterTwoText')[language];
+        const ourClassesTitle = contents.find(content => content.name === 'ourClassesSemestersTitle');
+        if (ourClassesTitle) { title = ourClassesTitle[language]}
+
+        const ourClassesSemesterOneTitle = contents.find(content => content.name === 'ourClassesSemesterOneTitle');
+        if (ourClassesSemesterOneTitle) { semesterOneTitle = ourClassesSemesterOneTitle[language]};
+
+        const ourClassesSemesterOneText = contents.find(content => content.name === 'ourClassesSemesterOneText');
+        if (ourClassesSemesterOneText) { semesterOneText = ourClassesSemesterOneText[language]};
+
+        const ourClassesSemesterTwoTitle = contents.find(content => content.name === 'ourClassesSemesterTwoTitle');
+        if (ourClassesSemesterTwoTitle) { semesterTwoTitle = ourClassesSemesterTwoTitle[language]};
+
+        const ourClassesSemesterTwoText = contents.find(content => content.name === 'ourClassesSemesterTwoText');
+        if (ourClassesSemesterTwoText) { semesterTwoText = ourClassesSemesterTwoText[language]};
     }
 
     return(
