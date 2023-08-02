@@ -23,15 +23,15 @@ export default function BuildHero() {
     }
 
     return(
-        <div className="grid grid-cols-3 h-96">
-            <div className="flex justify-center items-center col-span-2 bg-center bg-[url('https://cdn.discordapp.com/attachments/989268383751106560/1129712468206288906/jakovid_Students_in_an_English_classroom_in_Taiwan_with_a_dark__f78af349-a0ba-4e35-ad42-11bf7c50354c.png')]">
+        <div className="flex flex-col sm:grid sm:grid-cols-3 sm:h-96">
+            <div className="flex justify-center h-56 items-center sm:col-span-2 sm:h-full bg-center bg-[url('https://cdn.discordapp.com/attachments/989268383751106560/1129712468206288906/jakovid_Students_in_an_English_classroom_in_Taiwan_with_a_dark__f78af349-a0ba-4e35-ad42-11bf7c50354c.png')]">
                 <div className='w-full flex justify-center bg-gray-300/50 pt-4'>
                     <img src={SkyLogo} />
                 </div>
             </div>
-            <div className="bg-green-950/90 flex flex-col justify-center items-center text-center px-6 gap-3">
-                <p className="text-6xl">{title}</p>
-                <p className="text-xl">{subtitle}</p>
+            <div className="bg-green-950/90 flex flex-col justify-center items-center text-center py-10 px-6 sm:py-4 gap-3">
+                <p className="text-5xl sm:text-3xl md:text-4xl">{title}</p>
+                <p className="text-xl sm:text-md md:text-md">{subtitle}</p>
                 <p className="text-xs">- {location}-</p>
                 <div className="bg-red-900 px-6 py-2 border-4 border-red-900 rounded-s-full rounded-e-full text-sm cursor-pointer hover:bg-[#E0D3AF] hover:text-red-900">{button}</div>
                 <p className="text-xs">- Est. 2008 -</p>
