@@ -25,7 +25,7 @@ export default function BuildFooter(){
             </a>
 
             <div className='flex flex-row items-center gap-6 justify-center'>
-                <img className='h-4 md:h-8 bg-[#E0D3AF] pt-1 px-4 rounded-s-full rounded-e-full' src={SkyLogo} />
+                <img className='h-6 md:h-8 bg-[#E0D3AF] pt-1 px-4 rounded-s-full rounded-e-full' src={SkyLogo} />
                 <a href='https://www.facebook.com/Skyeducation2008' target="_blank"><FaFacebook className='text-2xl' /></a>
             </div>
         </footer>
