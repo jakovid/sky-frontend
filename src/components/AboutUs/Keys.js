@@ -37,8 +37,8 @@ export default function BuildKeys() {
         <div className='flex flex-col gap-2 bg-red-900/90'>
             <div className="w-full  text-center text-6xl p-4 pt-10">{keysTitle}</div>
             
-            <div className=" flex flex-row items-center justify-center lg:pb-28">
-                <div className="lg:w-4/6 flex flex-col max-w-6xl h-full bg-red-900 p-10 lg:grid lg:grid-cols-3 gap-8 lg:rounded-xl lg:border-8 border-green-950">
+            <div className=" flex flex-row items-center justify-center md:pb-28">
+                <div className="md:w-4/6 flex flex-col max-w-6xl h-full bg-red-900 p-10 lg:grid lg:grid-cols-3 gap-8 lg:rounded-xl lg:border-8 border-green-950">
                     <div className=" gap-3 flex flex-col items-center text-center">
                         <div><FaUserFriends className='text-8xl border-4 p-2 rounded-full border-[#E0D3AF]' /></div>
                         <h3 className="lg:text-3xl xl:text-4xl text-5xl">{keyTitleOne}</h3>
