@@ -34,17 +34,17 @@ export default function ContactForm(){
     }
 
     return(
-        <div className="bg-green-950/90 flex justify-center items-center py-10">
-            <div className="bg-green-950 w-2/3 p-6 flex flex-col gap-8 border-8 border-red-900 rounded-xl">
+        <div className="bg-green-950/90 flex justify-center items-center p-2 sm:p-8 lg:p-0 lg:py-10">
+            <div className="bg-green-950 lg:w-2/3 p-6 flex flex-col gap-8 border-8 border-red-900 rounded-xl">
                     <div className="flex flex-col text-center gap-2">
-                        <div className="text-4xl">
+                        <div className="text-2xl lg:text-4xl">
                             {title}
                         </div>
                         <div className="text-sm">
                             {subtitle}
                         </div>
                     </div>
-                    <form className="grid grid-cols-2 gap-4" ref={form} onSubmit={sendEmail}>
+                    <form className="flex flex-col lg:grid lg:grid-cols-2 gap-4" ref={form} onSubmit={sendEmail}>
                         <div className="flex flex-col gap-2">
                             <label htmlFor='name'>{language == "english" ? "Name" : "名稱"} *</label>
                             <input type='text' name="user_name" id='name' className='bg-[#E0D3AF] py-2 px-6 rounded-s-full rounded-e-full placeholder-red-900/50 text-green-950 focus:outline-red-900' placeholder="Full Name" required/>
