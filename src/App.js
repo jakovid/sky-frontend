@@ -6,6 +6,10 @@ import { useContentsContext } from './hooks/useContentsContext';
 import AdminTeachers from './pages/admin/Teachers';
 import Admin from './pages/admin/Admin';
 import AdminHome from './pages/admin/Home';
+import AdminAboutUs from './pages/admin/AboutUs';
+import AdminOurTeam from './pages/admin/OurTeam';
+import AdminOurClasses from './pages/admin/OurClasses';
+import AdminContactUs from './pages/admin/ContactUs';
 import LandingPageEng from './pages/public/LandingPageEng';
 import AboutUsEng from './pages/public/AboutUsEng';
 import OurTeamEng from './pages/public/OurTeamEng';
@@ -64,6 +68,22 @@ function App() {
             <Route
               path="/admin/home"
               element={<AdminHome />}
+            />
+            <Route
+              path="/admin/about-us"
+              element={<AdminAboutUs />}
+            />
+            <Route
+              path="/admin/our-team"
+              element={<AdminOurTeam />}
+            />
+            <Route
+              path="/admin/our-classes"
+              element={<AdminOurClasses/>}
+            />
+            <Route
+              path="/admin/contact-us"
+              element={<AdminContactUs/>}
             />
             <Route 
               path="/admin/teachers"
