@@ -30,7 +30,7 @@ export const contentsReducer = (state, action) => {
 
 export const ContentsContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(contentsReducer, {
-        content: null
+        contents: null
     })
     
     return(

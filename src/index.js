@@ -5,6 +5,7 @@ import App from './App';
 import { TeachersContextProvider } from './context/TeacherContext';
 import { LanguageContextProvider } from './context/LanguageContext';
 import { ContentsContextProvider } from './context/ContentContext';
+import { WebImagesContextProvider } from './context/WebImageContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +13,9 @@ root.render(
     <TeachersContextProvider>
       <LanguageContextProvider>
         <ContentsContextProvider>
-          <App />
+          <WebImagesContextProvider>
+            <App />
+          </WebImagesContextProvider>
         </ContentsContextProvider>
       </LanguageContextProvider>
     </TeachersContextProvider>
