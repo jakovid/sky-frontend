@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react';
 import { useContentsContext } from './hooks/useContentsContext';
+import { useWebImagesContext } from './hooks/useWebImagesContext';
 
 // pages and components
 import AdminTeachers from './pages/admin/Teachers';
@@ -17,7 +18,8 @@ import OurClassesEng from './pages/public/OurClassesEng';
 import ContactUsEng from './pages/public/ContactUsEng';
 
 function App() {
-  const { dispatch } = useContentsContext()
+  const { dispatch: contentsDispatch } = useContentsContext();
+  const{ dispatch: webImagesDispatch } = useWebImagesContext();
     
 
     useEffect(() => {
@@ -26,14 +28,27 @@ function App() {
             const json = await response.json()
 
             if(response.ok) {
-                dispatch({
+                contentsDispatch({
                     type: 'SET_CONTENTS',
                     payload: json
                 })
             }
         }
 
+        const fetchWebImages = async() => {
+          const response = await fetch('/api/web-images')
+          const json = await response.json()
+
+          if(response.ok) {
+              webImagesDispatch({
+                  type: 'SET_WEB_IMAGES',
+                  payload: json
+              })
+          }
+      }
+
         fetchContents()
+        fetchWebImages();
     }, [])
 
   return (

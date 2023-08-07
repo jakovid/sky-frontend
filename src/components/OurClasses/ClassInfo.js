@@ -1,10 +1,13 @@
 import { useLanguageContext } from '../../hooks/useLanguageContext'
 import { useContentsContext } from '../../hooks/useContentsContext';
+import { useWebImagesContext } from '../../hooks/useWebImagesContext';
 
 export default function BuildClassInfo(){
     const { language } = useLanguageContext();
     const { contents } = useContentsContext();
+    const { webImages } = useWebImagesContext();
 
+    // declare content variables
     let mainText = null, timeTitle = null, timeOneTitle = null, timeOneText = null, timeTwoTitle = null, timeTwoText = null, timeThreeTitle = null, timeThreeText = null, timeFourTitle = null, timeFourText = null
 
     if (contents) {
@@ -39,9 +42,17 @@ export default function BuildClassInfo(){
         if (ourClassesTimeFourText) { timeFourText = ourClassesTimeFourText[language]};
     }
 
+    // declare web image variables
+    let classInfoMainImage = null
+
+    if (webImages) {
+        const classInfoMain = webImages.find(webImage => webImage.name === "Our Classes Info Main");
+        if (classInfoMain) { classInfoMainImage = classInfoMain.img_url }
+    }
+
     return(
         <div className="bg-green-950/90 flex flex-col justify-center items-center">
-            <div className="h-[30rem] p-4 sm:h-[25rem] flex justify-center items-center border-t-8 border-b-8 border-red-900 bg-center w-full bg-cover bg-[url('https://cdn.discordapp.com/attachments/989268383751106560/1130755685571899553/jakovid_a_dark_red_and_dark_green_themed_lively_English_classro_a9ea020d-fab6-44b0-a8d9-6b2a6e27301e.png')]">
+            <div className="h-[30rem] p-4 sm:h-[25rem] flex justify-center items-center border-t-8 border-b-8 border-red-900 bg-center w-full bg-cover " style={{ backgroundImage: `url(${classInfoMainImage})` }}>
                 <div className="sm:w-2/3 bg-[#E0D3AF] text-red-900 p-8 text-center md:text-xl border-8 border-red-900 rounded-xl">{mainText}</div>
             </div>
             <div className="sm:w-2/3 bg-green-950 flex flex-col justify-center items-center my-10 p-4 sm:p-8 m-4 gap-4 border-8 border-red-900 rounded-xl">

@@ -1,10 +1,12 @@
 import SkyLogo from '../../images/SkyLogo2.webp'
 import { useLanguageContext } from '../../hooks/useLanguageContext'
 import { useContentsContext } from '../../hooks/useContentsContext'
+import { useWebImagesContext } from '../../hooks/useWebImagesContext'
 
 export default function BuildHero() {
     const { language } = useLanguageContext();
-    const { contents } = useContentsContext()
+    const { contents } = useContentsContext();
+    const { webImages } = useWebImagesContext();
     
     let title = null, subtitle = null, location = null, button = null
 
@@ -22,9 +24,16 @@ export default function BuildHero() {
         if (heroButton) { button = heroButton[language]}
     }
 
+    let heroMain = null
+
+    if (webImages){
+        const heroMainImg = webImages.find(webImage => webImage.name === 'Home Hero');
+        if (heroMainImg) { heroMain = heroMainImg.img_url}
+    }
+
     return(
         <div className="flex flex-col sm:grid sm:grid-cols-3 sm:h-96">
-            <div className="flex justify-center h-56 items-center sm:col-span-2 sm:h-full bg-center bg-[url('https://cdn.discordapp.com/attachments/989268383751106560/1129712468206288906/jakovid_Students_in_an_English_classroom_in_Taiwan_with_a_dark__f78af349-a0ba-4e35-ad42-11bf7c50354c.png')]">
+            <div className="flex justify-center h-56 items-center sm:col-span-2 sm:h-full bg-center" style={{ backgroundImage: `url(${heroMain})` }}>
                 <div className='w-full flex justify-center bg-gray-300/50 pt-4'>
                     <img src={SkyLogo} />
                 </div>
