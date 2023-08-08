@@ -12,11 +12,11 @@ export const webImagesReducer = (state, action) => {
             return {
                 webImages: [action.payload, ...state.webImages]
             }
-        case 'DELETE_WEB_IMAGES' :
+        case 'DELETE_WEB_IMAGE' :
             return {
                 webImages: state.webImages.filter((w) => w._id !== action.payload._id )
             }
-        case 'PATCH_WEB_IMAGES' :
+        case 'PATCH_WEB_IMAGE' :
             return {
                 webImages: state.webImages.map((webImage) =>
                     webImage._id === action.payload._id ? {...webImage, ...action.payload } : webImage
