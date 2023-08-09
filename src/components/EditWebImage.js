@@ -25,7 +25,7 @@ export default function EditWebImage({ image }){
       };
 
     const updateWebImage = async (e) => {
-        // e.preventDefault()
+        e.preventDefault()
 
         const response = await fetch('/api/web-images/' + image._id, {
             method: 'PATCH',
