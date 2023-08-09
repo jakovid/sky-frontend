@@ -35,21 +35,25 @@ function App() {
             }
         }
 
-        const fetchWebImages = async() => {
-          const response = await fetch('/api/web-images')
-          const json = await response.json()
+        fetchContents()
+        
+    }, [contentsDispatch])
 
-          if(response.ok) {
-              webImagesDispatch({
-                  type: 'SET_WEB_IMAGES',
-                  payload: json
-              })
-          }
+    useEffect(() => {
+      const fetchWebImages = async() => {
+        const response = await fetch('/api/web-images')
+        const json = await response.json()
+
+        if(response.ok) {
+            webImagesDispatch({
+                type: 'SET_WEB_IMAGES',
+                payload: json
+            })
+        }
       }
 
-        fetchContents()
-        fetchWebImages();
-    }, [])
+      fetchWebImages();
+    }, [webImagesDispatch])
 
   return (
     <div className="App">
