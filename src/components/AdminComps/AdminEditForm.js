@@ -10,6 +10,7 @@ export default function AdminEditForm({ content }) {
 
 
     const updateContent= async (e) => {
+        e.preventDefault()
         
         const response = await fetch('/api/content/' + content._id, {
             method: 'PATCH',
