@@ -6,7 +6,6 @@ import AdminEditForm from "../../components/AdminComps/AdminEditForm";
 import { useState } from "react";
 import EditWebImage from "../../components/EditWebImage";
 
-
 export default function AdminHome() {
     const { contents } = useContentsContext();
     const { webImages } = useWebImagesContext();

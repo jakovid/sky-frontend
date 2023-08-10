@@ -6,7 +6,6 @@ import AboutUsEng from '../public/AboutUsEng';
 import { useState } from "react";
 import EditWebImage from "../../components/EditWebImage";
 
-
 export default function AdminAboutUs() {
     const { contents } = useContentsContext();
     const { webImages } = useWebImagesContext();
