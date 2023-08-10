@@ -6,7 +6,6 @@ import ContactUsEng from "../public/ContactUsEng";
 import { useState } from "react";
 import EditWebImage from "../../components/EditWebImage";
 
-
 export default function AdminContactUs() {
     const { contents } = useContentsContext();
     const { webImages } = useWebImagesContext();
