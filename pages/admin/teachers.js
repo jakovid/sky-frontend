@@ -5,8 +5,9 @@ import { useTeachersContext } from '@/hooks/useTeachersContext'
 import TeacherDetails from "@/components/TeacherDetails"
 import TeacherForm from "@/components/TeacherForm"
 import AdminNavbar from "@/components/AdminNavbar"
+import withAuth from '@/components/withAuth'
 
-export default function AdminTeachers() {
+function AdminTeachers() {
     const { teachers, dispatch } = useTeachersContext()
     
 
@@ -43,3 +44,5 @@ export default function AdminTeachers() {
         </div>
     )
 }
+
+export default withAuth(AdminTeachers)
