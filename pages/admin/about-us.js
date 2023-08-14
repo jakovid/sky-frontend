@@ -1,3 +1,4 @@
+import withAuth from '@/components/withAuth'
 import AdminNavbar from "@/components/AdminNavbar";
 import { useContentsContext } from "@/hooks/useContentsContext";
 import { useWebImagesContext } from "@/hooks/useWebImagesContext";
@@ -6,7 +7,7 @@ import AboutUsEng from "../about-us"
 import { useState } from "react";
 import EditWebImage from "@/components/EditWebImage";
 
-export default function AdminAboutUs() {
+function AdminAboutUs() {
     const { contents } = useContentsContext();
     const { webImages } = useWebImagesContext();
     const [editType, setEditType] = useState('content');
@@ -53,3 +54,5 @@ export default function AdminAboutUs() {
         </div>
     )
 }
+
+export default withAuth(AdminAboutUs)

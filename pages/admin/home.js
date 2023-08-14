@@ -1,3 +1,4 @@
+import withAuth from '@/components/withAuth'
 import LandingPageEng from "../index";
 import AdminNavbar from "@/components/AdminNavbar";
 import { useContentsContext } from "@/hooks/useContentsContext";
@@ -6,7 +7,7 @@ import AdminEditForm from "@/components/AdminComps/AdminEditForm";
 import { useState } from "react";
 import EditWebImage from "@/components/EditWebImage";
 
-export default function AdminHome() {
+function AdminHome() {
     const { contents } = useContentsContext();
     const { webImages } = useWebImagesContext();
 
@@ -51,3 +52,5 @@ export default function AdminHome() {
         </div>
     )
 }
+
+export default withAuth(AdminHome)

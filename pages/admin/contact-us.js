@@ -1,3 +1,4 @@
+import withAuth from '@/components/withAuth'
 import AdminNavbar from "@/components/AdminNavbar";
 import { useContentsContext } from "@/hooks/useContentsContext";
 import { useWebImagesContext } from "@/hooks/useWebImagesContext";
@@ -6,7 +7,7 @@ import ContactUsEng from "../contact-us";
 import { useState } from "react";
 import EditWebImage from "@/components/EditWebImage";
 
-export default function AdminContactUs() {
+function AdminContactUs() {
     const { contents } = useContentsContext();
     const { webImages } = useWebImagesContext();
 
@@ -50,3 +51,5 @@ export default function AdminContactUs() {
         </div>
     )
 }
+
+export default withAuth(AdminContactUs)
