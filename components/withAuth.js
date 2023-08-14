@@ -24,21 +24,7 @@ export default function withAuth(Component) {
         router.push("/admin/login");
         return null;
       }
-  
-      // I need to figure out how to verify lol
-      // try {
-      //   const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);  // Remember, verifying this on the client-side isn't the safest way!
-      //   if (!decoded.isAdmin) {
-      //     // Redirect if user isn't admin
-      //     router.push("/admin/login");
-      //     return null;
-      //   }
-      // } catch (error) {
-      //   console.error("Token verification failed:", error);
-      //   router.push("/admin/login");
-      //   return null;
-      // }
-  
+        
       return <Component {...props} />
     }
   }
