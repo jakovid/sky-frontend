@@ -1,3 +1,4 @@
+import withAuth from '@/components/withAuth'
 import AdminNavbar from "@/components/AdminNavbar";
 import { useContentsContext } from "@/hooks/useContentsContext";
 import { useWebImagesContext } from "@/hooks/useWebImagesContext";
@@ -6,9 +7,7 @@ import OurTeamEng from "../our-team"
 import { useState } from "react";
 import EditWebImage from "@/components/EditWebImage";
 
-
-
-export default function AdminOurTeam() {
+function AdminOurTeam() {
     const { contents } = useContentsContext();
     const { webImages } = useWebImagesContext();
 
@@ -53,3 +52,5 @@ export default function AdminOurTeam() {
         </div>
     )
 }
+
+export default withAuth(AdminOurTeam)
