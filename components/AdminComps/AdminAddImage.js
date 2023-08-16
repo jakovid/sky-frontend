@@ -7,6 +7,8 @@ import { useWebImagesContext } from "../../hooks/useWebImagesContext.js";
 export default function AdminAddImage() {
     const { webImages, dispatch } = useWebImagesContext()
 
+    const token = localStorage.getItem('token');
+
     const [name, setName] = useState('')
     const [img_url, setImgUrl] = useState('')
     const [img_id, setImgId] = useState('')
@@ -16,7 +18,7 @@ export default function AdminAddImage() {
 
     useEffect(() => {
         const fetchWebImages= async() => {
-            const response = await fetch('/api/web-images')
+            const response = await fetch('http://localhost:4000/api/web-images')
             const json = await response.json()
 
             if(response.ok) {
@@ -35,11 +37,12 @@ export default function AdminAddImage() {
 
         const webImage = {name, img_url, img_id}
 
-        const response = await fetch('/api/web-images', {
+        const response = await fetch('http://localhost:4000/api/web-images', {
             method: 'POST',
             body: JSON.stringify(webImage),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
             }
         })
         const json = await response.json()

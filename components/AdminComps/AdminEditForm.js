@@ -5,17 +5,21 @@ export default function AdminEditForm({ content }) {
 
     const { dispatch } = useContentsContext();
 
+    const token = localStorage.getItem('token');
+
     const [english, setEnglish] = useState(content.english)
     const [chinese, setChinese] = useState(content.chinese)
 
 
     const updateContent= async (e) => {
-        e.preventDefault()
+        // I can't figure out how to re-render without reloading the webpage
+        // e.preventDefault()
         
-        const response = await fetch('/api/content/' + content._id, {
+        const response = await fetch('http://localhost:4000/api/content/' + content._id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
             },
             body: JSON.stringify({ chinese, english })
         })

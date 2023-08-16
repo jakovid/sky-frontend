@@ -6,6 +6,7 @@ import { useWebImagesContext } from "@/hooks/useWebImagesContext";
 import AdminEditForm from "@/components/AdminComps/AdminEditForm";
 import { useState } from "react";
 import EditWebImage from "@/components/EditWebImage";
+import Head from 'next/head';
 
 function AdminHome() {
     const { contents } = useContentsContext();
@@ -30,6 +31,9 @@ function AdminHome() {
 
     return(
         <div>
+            <Head>
+                <title>Sky Education | Edit Home</title>
+            </Head>
             <AdminNavbar />
             <div className="grid grid-cols-2">
                 <LandingPageEng />

@@ -6,6 +6,7 @@ import AdminEditForm from "@/components/AdminComps/AdminEditForm";
 import AboutUsEng from "../about-us"
 import { useState } from "react";
 import EditWebImage from "@/components/EditWebImage";
+import Head from 'next/head';
 
 function AdminAboutUs() {
     const { contents } = useContentsContext();
@@ -31,6 +32,9 @@ function AdminAboutUs() {
 
     return(
         <div>
+            <Head>
+                <title>Sky Education | Edit About Us</title>
+            </Head>
             <AdminNavbar />
             <div className="grid grid-cols-2">
                 <AboutUsEng />
