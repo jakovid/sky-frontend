@@ -12,6 +12,12 @@ export const teachersReducer = (state, action) => {
             return {
                 teachers: [action.payload, ...state.teachers]
             }
+        case 'PATCH_TEACHER' :
+            return {
+                teachers: state.teachers.map((teacher) =>
+                    teacher._id === action.payload._id ? {...teacher, ...action.payload } : teacher
+                )
+            }
         case 'DELETE_TEACHER' :
             return {
                 teachers: state.teachers.filter((t) => t._id !== action.payload._id )

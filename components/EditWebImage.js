@@ -4,6 +4,8 @@ import { useWebImagesContext } from "../hooks/useWebImagesContext";
 export default function EditWebImage({ image }){
     const { dispatch } = useWebImagesContext();
 
+    const token = localStorage.getItem('token');
+
     const [img_url, setImgUrl] = useState('');
     const [img_id, setImgId] = useState('');
     const [error, setError] = useState(null);
@@ -13,9 +15,12 @@ export default function EditWebImage({ image }){
         const formData = new FormData();
         formData.append('image', image);
 
-        const response = await fetch('/api/images/upload', {
+        const response = await fetch('http://localhost:4000/api/images/upload', {
             method: 'POST',
             body: formData,
+            headers: {
+                'Authorization': `Bearer ${token}` 
+            }
         });
 
         const data = await response.json();
@@ -25,12 +30,14 @@ export default function EditWebImage({ image }){
       };
 
     const updateWebImage = async (e) => {
-        e.preventDefault()
+        // I can't figure out how to re-render without reloading the webpage
+        // e.preventDefault()
 
-        const response = await fetch('/api/web-images/' + image._id, {
+        const response = await fetch('http://localhost:4000/api/web-images/' + image._id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
             },
             body: JSON.stringify({ img_url, img_id })
         })
@@ -48,8 +55,11 @@ export default function EditWebImage({ image }){
     }
 
     const deleteImage = async () => {
-        const response = await fetch ('/api/images/'+ image.img_id, {
+        const response = await fetch ('http://localhost:4000/api/images/'+ image.img_id, {
             method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}` 
+            }
         });
         const json = await response.json();
         console.log(json);

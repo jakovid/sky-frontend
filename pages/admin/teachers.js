@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useTeachersContext } from '@/hooks/useTeachersContext'
+import Head from "next/head"
 
 // components
 import TeacherDetails from "@/components/TeacherDetails"
@@ -29,6 +30,9 @@ function AdminTeachers() {
 
     return(
         <div>
+            <Head>
+                <title>Sky Education | Manage Teachers</title>
+            </Head>
             <AdminNavbar />
             <div className="w-full bg-red-900/90 flex flex-row justify-center items-center">
                 <div className="w-2/3 grid grid-cols-3 gap-24">

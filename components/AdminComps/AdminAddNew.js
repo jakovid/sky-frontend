@@ -7,6 +7,8 @@ import { useContentsContext } from '../../hooks/useContentsContext';
 export default function AdminAddNewData() {
     const { contents, dispatch } = useContentsContext()
 
+    const token = localStorage.getItem('token');
+
     const [name, setName] = useState('')
     const [chinese, setChinese] = useState('')
     const [english, setEnglish] = useState('')
@@ -16,7 +18,7 @@ export default function AdminAddNewData() {
 
     useEffect(() => {
         const fetchContents= async() => {
-            const response = await fetch('/api/content')
+            const response = await fetch('http://localhost:4000/api/content')
             const json = await response.json()
 
             if(response.ok) {
@@ -35,11 +37,12 @@ export default function AdminAddNewData() {
 
         const content = {name, chinese, english}
 
-        const response = await fetch('/api/content', {
+        const response = await fetch('http://localhost:4000/api/content', {
             method: 'POST',
             body: JSON.stringify(content),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
             }
         })
         const json = await response.json()
