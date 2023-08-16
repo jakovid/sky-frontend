@@ -4,6 +4,8 @@ import { useTeachersContext } from "../hooks/useTeachersContext";
 export default function TeacherForm() {
     const { dispatch } = useTeachersContext()
 
+    const token = localStorage.getItem('token');
+
     const [name, setName] = useState('')
     const [country, setCountry] = useState('')
     const [bio, setBio] = useState('')
@@ -18,11 +20,12 @@ export default function TeacherForm() {
 
         const teacher = {name, country, bio, img_url, img_id, order}
 
-        const response = await fetch('http://localhost:/api/teachers', {
+        const response = await fetch('http://localhost:4000/api/teachers', {
             method: 'POST',
             body: JSON.stringify(teacher),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
             }
         })
         const json = await response.json()
@@ -49,9 +52,12 @@ export default function TeacherForm() {
         const formData = new FormData();
         formData.append('image', image);
 
-        const response = await fetch('/api/images/upload', {
+        const response = await fetch('http://localhost:4000/api/images/upload', {
             method: 'POST',
             body: formData,
+            headers: {
+                'Authorization': `Bearer ${token}` 
+            }
         });
 
         const data = await response.json();

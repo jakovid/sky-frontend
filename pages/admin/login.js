@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 export default function AdminLogin() {
     const [username, setUsername] = useState('');
@@ -40,6 +41,9 @@ export default function AdminLogin() {
       
     return (
       <div>
+        <Head>
+          <title>Sky Education | Admin Login</title>
+        </Head>
         <form onSubmit={handleLogin}>
             <div>
             <label>Username:</label>

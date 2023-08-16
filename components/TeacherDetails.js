@@ -1,15 +1,20 @@
 import { useTeachersContext } from "../hooks/useTeachersContext"
 import { BsFillTrash3Fill } from 'react-icons/bs'
+import { useState } from "react";
 
 export default function TeacherDetails({ teacher }) {
     const { dispatch } = useTeachersContext()
+
+    const [order, setOrder] = useState(teacher.order)
+
+    const token = localStorage.getItem('token');
 
     function countrySwitch(country) {
         switch(country) {
             case 'Taiwan':
                 return "/images/tw.png";
             case 'USA':
-                return "/images/use.png";
+                return "/images/usa.png";
             case 'Canada':
                 return "/images/cn.png";
             case 'UK':
@@ -51,6 +56,31 @@ export default function TeacherDetails({ teacher }) {
         }
     }
 
+    const saveOrder= async (e) => {
+        // I can't figure out how to re-render without reloading the webpage
+        // e.preventDefault()
+        
+        const response = await fetch('http://localhost:4000/api/teachers/' + teacher._id, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
+            },
+            body: JSON.stringify({ order })
+        })
+        const json = await response.json()
+        console.log('updating')
+
+        if (response.ok) {
+            sendDispatch(json);
+        }
+    }
+
+    const sendDispatch = (json) => {
+        dispatch({ type: 'PATCH_TEACHER', payload: json })
+    }
+
+
     return (
         <div className="bg-green-950 rounded-lg m-4 p-5 relative shadow-md flex items-center gap-8">
             <div>
@@ -61,6 +91,11 @@ export default function TeacherDetails({ teacher }) {
                 </div>
             </div>
             <p className="text-sm flex h-40 w-80 bg-white text-black p-2">{teacher.bio || "No Bio Available"}</p>
+            <div className="flex gap-4 text-5xl text-black">
+                <label>Order:</label>
+                <input type="number" value={order} className="w-16 flex ps-5" onChange={(e) => setOrder(e.target.value)} />
+                <button type="submit" onClick={saveOrder} className="bg-red-900  h-auto w-auto m-2 text-2xl rounded-s-full rounded-e-full cursor-pointer border-4 border-red-900 hover:bg-green-950">Save Order Update</button>
+            </div>
             <span onClick={handleClick} className="flex items-center justify-center absolute top-5 right-5 cursor-pointer p-1 border-red-900 border-2 rounded-full fill-red-900 hover:bg-red-900 hover:fill-white">
                 <BsFillTrash3Fill fill="inherit" />
             </span>
