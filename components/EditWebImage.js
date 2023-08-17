@@ -15,7 +15,8 @@ export default function EditWebImage({ image }){
         const formData = new FormData();
         formData.append('image', image);
 
-        const response = await fetch('http://localhost:4000/api/images/upload', {
+        const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/images/upload`;
+        const response = await fetch(API_ENDPOINT, {
             method: 'POST',
             body: formData,
             headers: {
@@ -33,7 +34,9 @@ export default function EditWebImage({ image }){
         // I can't figure out how to re-render without reloading the webpage
         // e.preventDefault()
 
-        const response = await fetch('http://localhost:4000/api/web-images/' + image._id, {
+        const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/web-images/` + image._id;
+
+        const response = await fetch(API_ENDPOINT, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -55,7 +58,8 @@ export default function EditWebImage({ image }){
     }
 
     const deleteImage = async () => {
-        const response = await fetch ('http://localhost:4000/api/images/'+ image.img_id, {
+        const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/images/` + image.img_id;
+        const response = await fetch (API_ENDPOINT, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}` 

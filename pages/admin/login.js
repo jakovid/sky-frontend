@@ -11,10 +11,13 @@ export default function AdminLogin() {
       
     const handleLogin = async (e) => {
         e.preventDefault();
+
+        const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/login`;
+
         setError(null); // Clear any prior error
     
         try {
-          const response = await fetch('http://localhost:4000/api/login', {
+          const response = await fetch(API_ENDPOINT, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

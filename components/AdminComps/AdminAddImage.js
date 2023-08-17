@@ -18,7 +18,8 @@ export default function AdminAddImage() {
 
     useEffect(() => {
         const fetchWebImages= async() => {
-            const response = await fetch('http://localhost:4000/api/web-images')
+            const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/web-images`;
+            const response = await fetch(API_ENDPOINT)
             const json = await response.json()
 
             if(response.ok) {
@@ -37,7 +38,8 @@ export default function AdminAddImage() {
 
         const webImage = {name, img_url, img_id}
 
-        const response = await fetch('http://localhost:4000/api/web-images', {
+        const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/web-images`;
+        const response = await fetch(API_ENDPOINT, {
             method: 'POST',
             body: JSON.stringify(webImage),
             headers: {

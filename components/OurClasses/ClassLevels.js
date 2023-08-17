@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { useLanguageContext } from '../../hooks/useLanguageContext'
 import { useContentsContext } from '../../hooks/useContentsContext';
 import { useWebImagesContext } from '../../hooks/useWebImagesContext';
@@ -69,7 +71,9 @@ export default function BuildClassLevels(){
             </div>
 
             <div className="h-[25rem] flex justify-center items-center border-t-8 border-b-8 border-red-900 bg-center w-full bg-cover" style={{ backgroundImage: `url(${classLevelCTAOneImage})` }}>
-                <div className="bg-green-950 px-8 py-4 rounded-s-full rounded-e-full text-2xl lg:text-4xl cursor-pointer border-8 border-red-900 hover:text-green-950 hover:bg-[#E0D3AF]">{buttonOne}</div>
+                <Link href="/contact-us">
+                    <div className="bg-green-950 px-8 py-4 rounded-s-full rounded-e-full text-2xl lg:text-4xl cursor-pointer border-8 border-red-900 hover:text-green-950 hover:bg-[#E0D3AF]">{buttonOne}</div>
+                </Link>
             </div>
 
             <div className="w-full flex justify-center items-center bg-green-950/90">
@@ -83,7 +87,9 @@ export default function BuildClassLevels(){
             </div>
 
             <div className="h-[25rem] flex justify-center items-center border-t-8 border-b-8 border-red-900 bg-center w-full bg-cover" style={{ backgroundImage: `url(${classLevelCTATwoImage})` }}>
-                <div className="bg-green-950 px-8 py-4 rounded-s-full rounded-e-full text-2xl lg:text-4xl cursor-pointer border-8 border-red-900 hover:text-green-950 hover:bg-[#E0D3AF]">{buttonTwo}</div>
+                <Link href="/contact-us">
+                    <div className="bg-green-950 px-8 py-4 rounded-s-full rounded-e-full text-2xl lg:text-4xl cursor-pointer border-8 border-red-900 hover:text-green-950 hover:bg-[#E0D3AF]">{buttonTwo}</div>
+                </Link>
             </div>
 
             <div className="w-full flex justify-center items-center bg-red-900/90 border-b-8 border-red-900">

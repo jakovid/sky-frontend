@@ -15,7 +15,8 @@ export default function AdminEditForm({ content }) {
         // I can't figure out how to re-render without reloading the webpage
         // e.preventDefault()
         
-        const response = await fetch('http://localhost:4000/api/content/' + content._id, {
+        const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/content/` + content._id;
+        const response = await fetch(API_ENDPOINT, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

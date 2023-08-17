@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { useLanguageContext } from '../../hooks/useLanguageContext'
 import { useContentsContext } from '../../hooks/useContentsContext';
 
@@ -28,10 +30,12 @@ export default function BuildWhyLearn() {
                 <h2 className="text-6xl text-center">{title}</h2>
                 <p className='text-center'>{subtitle}</p>
                 <p className="text-lg sm:text-xl">{text}</p>
-                <div className="bg-green-950 text-center text-xl sm:text-3xl px-6 py-2 border-4 border-green-950 rounded-s-full rounded-e-full cursor-pointer hover:bg-[#E0D3AF] hover:text-green-950">
-                    {language === "english" && currentMonth < 8 ? `New English Classes Starting July ${currentYear}` : language === "english" ? `New English Classes Starting January ${currentYear + 1}` : ""}
-                    {language === "chinese" && currentMonth < 8 ? `${currentYear}年7月開始最新課程！` : language === "chinese" ? `${currentYear+1}年1月開始最新課程！` : ""}
-                </div>
+                <Link href="/our-classes" >
+                    <div className="bg-green-950 text-center text-xl sm:text-3xl px-6 py-2 border-4 border-green-950 rounded-s-full rounded-e-full cursor-pointer hover:bg-[#E0D3AF] hover:text-green-950">
+                        {language === "english" && currentMonth < 8 ? `New English Classes Starting July ${currentYear}` : language === "english" ? `New English Classes Starting January ${currentYear + 1}` : ""}
+                        {language === "chinese" && currentMonth < 8 ? `${currentYear}年7月開始最新課程！` : language === "chinese" ? `${currentYear+1}年1月開始最新課程！` : ""}
+                    </div>
+                </Link>
             </div>
         </div>
     )

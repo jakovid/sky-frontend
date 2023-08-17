@@ -20,7 +20,9 @@ export default function TeacherForm() {
 
         const teacher = {name, country, bio, img_url, img_id, order}
 
-        const response = await fetch('http://localhost:4000/api/teachers', {
+        const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/teachers`;
+
+        const response = await fetch(API_ENDPOINT, {
             method: 'POST',
             body: JSON.stringify(teacher),
             headers: {
@@ -52,7 +54,9 @@ export default function TeacherForm() {
         const formData = new FormData();
         formData.append('image', image);
 
-        const response = await fetch('http://localhost:4000/api/images/upload', {
+        const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/images/upload`;
+
+        const response = await fetch(API_ENDPOINT, {
             method: 'POST',
             body: formData,
             headers: {

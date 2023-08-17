@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { useLanguageContext } from '../../hooks/useLanguageContext'
 import { useContentsContext } from '../../hooks/useContentsContext'
 import { useWebImagesContext } from '../../hooks/useWebImagesContext'
@@ -38,11 +40,13 @@ export default function BuildHero() {
                 </div>
             </div>
             <div className="bg-green-950/90 flex flex-col justify-center items-center text-center py-10 px-6 sm:py-4 gap-3">
-                <p className="text-5xl sm:text-3xl md:text-4xl">{title}</p>
-                <p className="text-xl sm:text-md md:text-md">{subtitle}</p>
-                <p className="text-xs">- {location}-</p>
-                <div className="bg-red-900 px-6 py-2 border-4 border-red-900 rounded-s-full rounded-e-full text-sm cursor-pointer hover:bg-[#E0D3AF] hover:text-red-900">{button}</div>
-                <p className="text-xs">- Est. 2008 -</p>
+                <p className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">{title}</p>
+                <p className="text-xl sm:text-md md:text-md lg:text-2xl xl:text-4xl">{subtitle}</p>
+                <p className="text-xs lg:text-lg xl:text-xl">- {location}-</p>
+                <Link href="/contact-us" >
+                    <div className="bg-red-900 px-6 py-2 border-4 border-red-900 rounded-s-full rounded-e-full text-sm lg:text-lg xl:text-xl cursor-pointer hover:bg-[#E0D3AF] hover:text-red-900">{button}</div>
+                </Link>
+                <p className="text-xs lg:text-lg xl:text-xl">- Est. 2008 -</p>
             </div>
 
         </div>
