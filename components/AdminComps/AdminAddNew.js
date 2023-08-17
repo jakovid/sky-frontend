@@ -18,7 +18,8 @@ export default function AdminAddNewData() {
 
     useEffect(() => {
         const fetchContents= async() => {
-            const response = await fetch('http://localhost:4000/api/content')
+            const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/content`;
+            const response = await fetch(API_ENDPOINT)
             const json = await response.json()
 
             if(response.ok) {
@@ -37,7 +38,9 @@ export default function AdminAddNewData() {
 
         const content = {name, chinese, english}
 
-        const response = await fetch('http://localhost:4000/api/content', {
+        const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/content`;
+
+        const response = await fetch(API_ENDPOINT, {
             method: 'POST',
             body: JSON.stringify(content),
             headers: {

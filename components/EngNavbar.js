@@ -15,7 +15,8 @@ export default function EngNavbar() {
   
       useEffect(() => {
           const fetchContents = async() => {
-              const response = await fetch('http://localhost:4000/api/content')
+            const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/content`;
+              const response = await fetch(API_ENDPOINT)
               const json = await response.json()
   
               if(response.ok) {
@@ -32,7 +33,8 @@ export default function EngNavbar() {
   
       useEffect(() => {
         const fetchWebImages = async() => {
-          const response = await fetch('http://localhost:4000/api/web-images')
+            const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/web-images`;
+          const response = await fetch(API_ENDPOINT)
           const json = await response.json()
   
           if(response.ok) {
@@ -76,23 +78,23 @@ export default function EngNavbar() {
                 <div className="pe-5 flex items-center gap-4">
                     <div className="flex flex-row gap-4 items-center">
                         <Link href="/" className="hover:bg-red-900 hover:text-green-950 px-1  py-1 sm:px-3 rounded-s-full rounded-e-full">
-                                <p className="text-xs text-center hidden sm:text-md sm:block">{home}</p>
+                                <p className="text-xs text-center hidden sm:text-md sm:block md:text-lg lg:text-xl xl:text-2xl">{home}</p>
                                 <AiFillHome className="sm:hidden text-2xl" />
                         </Link>
                         <Link href="/about-us" className="hover:bg-red-900 hover:text-green-950 px-1  py-1 sm:px-3 rounded-s-full rounded-e-full">
-                                <p className="text-xs text-center hidden sm:text-md sm:block">{aboutUs}</p>
+                                <p className="text-xs text-center hidden sm:text-md sm:block md:text-lg lg:text-xl xl:text-2xl">{aboutUs}</p>
                                 <AiFillInfoCircle className="sm:hidden text-2xl" />
                         </Link>
                         <Link href="/our-team" className="hover:bg-red-900 hover:text-green-950 px-1  py-1 sm:px-3 rounded-s-full rounded-e-full">
-                                <p className="text-xs text-center hidden sm:text-md sm:block">{ourTeam}</p>
+                                <p className="text-xs text-center hidden sm:text-md sm:block md:text-lg lg:text-xl xl:text-2xl">{ourTeam}</p>
                                 <AiOutlineTeam className="sm:hidden text-2xl" />
                         </Link>
                         <Link href="/our-classes" className="hover:bg-red-900 hover:text-green-950 px-1  py-1 sm:px-3 rounded-s-full rounded-e-full">
-                                <p className="text-xs text-center hidden sm:text-md sm:block">{ourClasses}</p>
+                                <p className="text-xs text-center hidden sm:text-md sm:block md:text-lg lg:text-xl xl:text-2xl">{ourClasses}</p>
                                 <FaChalkboardTeacher className="sm:hidden text-2xl"/>
                         </Link>
                         <Link href="/contact-us" className="hover:bg-red-900 hover:text-green-950 px-1  py-1 sm:px-3 rounded-s-full rounded-e-full">
-                                <p className="text-xs text-center hidden sm:text-md sm:block">{contactUs}</p>
+                                <p className="text-xs text-center hidden sm:text-md sm:block md:text-lg lg:text-xl xl:text-2xl">{contactUs}</p>
                                 <AiOutlineMail className="sm:hidden text-2xl" />
                         </Link>
                     </div>

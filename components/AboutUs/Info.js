@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { useLanguageContext } from '../../hooks/useLanguageContext'
 import { useContentsContext } from '../../hooks/useContentsContext';
 import { useWebImagesContext } from '../../hooks/useWebImagesContext';
@@ -52,9 +54,11 @@ export default function BuildInfo(){
                         <p className="text-xl lg:text-sm xl:text-xl">{textOne}</p>
                     </div>
                 </div>
-
+                
                 <div className="h-[15rem] lg:h-[25rem] flex justify-center items-center border-t-8 border-b-8 border-red-900 bg-center w-full bg-cover" style={{ backgroundImage: `url(${aboutUsInfoCTAImage})` }}>
-                    <div className="bg-green-950 text-xl py-2 px-4 lg:px-8 lg:py-4 rounded-s-full rounded-e-full lg:text-4xl cursor-pointer border-8 border-red-900 hover:text-green-950 hover:bg-[#E0D3AF]">{button}</div>
+                    <Link href="/our-classes">
+                        <div className="bg-green-950 text-xl py-2 px-4 lg:px-8 lg:py-4 rounded-s-full rounded-e-full lg:text-4xl cursor-pointer border-8 border-red-900 hover:text-green-950 hover:bg-[#E0D3AF]">{button}</div>
+                    </Link>
                 </div>
 
                 <div className="flex flex-col-reverse px-8 lg:px-0 lg:flex-row lg:w-2/3 gap-8 lg:gap-10 items-center py-10 lg:py-28">

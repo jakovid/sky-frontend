@@ -14,7 +14,8 @@ function AdminTeachers() {
 
     useEffect(() => {
         const fetchTeachers = async() => {
-            const response = await fetch('http://localhost:4000/api/teachers')
+            const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/teachers`;
+            const response = await fetch(API_ENDPOINT)
             const json = await response.json()
 
             if(response.ok) {
