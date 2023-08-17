@@ -1,38 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bi-Lingual School Website
 
-## Getting Started
+A complete solution built using Next.js, Tailwind CSS for the frontend, with a backend powered by Node.js, Express, and MongoDB.
 
-First, run the development server:
+## Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+**Objective:** Develop a bilingual (English and Chinese) website for a school based in Taipei, Taiwan.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Background:** The school wanted a bilingual platform both for potential customers and for the attraction of new teaching and administrative staff. The journey of this project involved multiple stages and iterations. It started with a CMS-based approach, transitioned into a React app hosted on GitHub Pages using a HashRouter, and culminated in its current version powered by Next.js with a robust backend.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Features
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+**For Users:**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Quick language toggle
+- Contact form integration with EmailJS
+- Designed with a mobile-first approach
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**For Admin:**
 
-## Learn More
+- Secure login and authentication
+- Seamless API communication with MongoDB and Cloudinary
+- Content update capability in both English and Chinese
+- Image modification tools
+- Staff and teacher management options
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project serves as a showcase in my public portfolio, thanks to the client's agreement. If you intend to adapt this project for your own needs, ensure all associated logos and brand names are modified accordingly.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Reporting Bugs & Improvements
 
-## Deploy on Vercel
+Encountered an issue or have a suggestion?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Use the **issues tab** above to submit any discrepancies or proposals.
+2. If you've addressed an issue and want to contribute, raise a PR. Don't forget to reference the corresponding issue!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Known Issues
+
+Currently, changes in the `ContentContext` and `WebImageContext` states do not trigger an immediate reload upon submission from the admin panel. I'm actively looking into this.
+
+This version adds more structure and clarity to the sections. It provides a clearer hierarchy and uses consistent formatting to emphasize various parts.
