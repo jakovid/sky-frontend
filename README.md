@@ -1,4 +1,4 @@
-# Bi-Lingual School Website
+# Bi-Lingual School Website (Frontend)
 
 A complete solution built using Next.js, and Tailwind CSS for the frontend, with a backend powered by Node.js, Express, and MongoDB.
 
