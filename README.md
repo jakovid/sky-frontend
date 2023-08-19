@@ -30,7 +30,7 @@ This project serves as a showcase in my public portfolio, thanks to the client's
 
 ## Reporting Bugs & Improvements
 
-Encountered an issue or have a suggestion?
+Encountered an issue or have a suggestion? Don't be shy.
 
 1. Use the **issues tab** above to submit any discrepancies or proposals.
 2. If you've addressed an issue and want to contribute, raise a PR. Don't forget to reference the corresponding issue!
