@@ -41,6 +41,10 @@ export default function TeacherDetails({ teacher }) {
         const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/images/` + teacher.img_id;
         const response = await fetch (API_ENDPOINT, {
             method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
+            },
         });
         const json = await response.json();
         console.log(json);
@@ -49,7 +53,11 @@ export default function TeacherDetails({ teacher }) {
     const deleteTeacher = async () => {
         const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/teachers/` + teacher._id;
         const response = await fetch(API_ENDPOINT, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
+            },
         })
         const json = await response.json()
 
