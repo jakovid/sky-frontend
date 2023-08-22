@@ -34,3 +34,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+body {
+  @apply font-sans;
+}
