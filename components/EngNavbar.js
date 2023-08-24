@@ -99,7 +99,7 @@ export default function EngNavbar() {
                         </Link>
                     </div>
                     <div>
-                        {language && language === 'chinese' ? <div className="bg-black h-6 w-6 sm:h-10 sm:w-10 bg-cover bg-center rounded-full cursor-pointer bg-[url(/images/usa.png)]" onClick={() => switchLanguage("english")}  /> : <div className="bg-black h-6 w-6 sm:h-10 sm:w-10 bg-cover bg-center rounded-full cursor-pointer bg-[url(/images/tw.png)]" onClick={() => switchLanguage("chinese")}  />}
+                        {language && language === 'chinese' ? <div className="bg-black h-6 w-6 sm:h-10 sm:w-10 bg-cover bg-center rounded-full cursor-pointer bg-[url(/images/cn.png)]" onClick={() => switchLanguage("english")}  /> : <div className="bg-black h-6 w-6 sm:h-10 sm:w-10 bg-cover bg-center rounded-full cursor-pointer bg-[url(/images/tw.png)]" onClick={() => switchLanguage("chinese")}  />}
                     </div>
                 </div>
             </div>
