@@ -1,11 +1,15 @@
 import Link from 'next/link'
+import { useEffect } from 'react'
 
+// Import Icons
+import { AiFillHome, AiFillInfoCircle, AiOutlineTeam, AiOutlineMail } from 'react-icons/ai'
+import { FaChalkboardTeacher } from 'react-icons/fa'
+
+// Import Hooks
 import { useLanguageContext } from "../hooks/useLanguageContext";
 import { useContentsContext } from '../hooks/useContentsContext';
 import { useWebImagesContext } from "@/hooks/useWebImagesContext";
-import { useEffect } from 'react'
-import { AiFillHome, AiFillInfoCircle, AiOutlineTeam, AiOutlineMail } from 'react-icons/ai'
-import { FaChalkboardTeacher } from 'react-icons/fa'
+
 
 export default function EngNavbar() {
     const { language, dispatch } = useLanguageContext();

@@ -1,5 +1,10 @@
+import Image from 'next/image'
+
+// Import icons
 import {FaFacebook, FaMapPin} from 'react-icons/fa'
 import {BsTelephone} from 'react-icons/bs'
+
+// Import Hooks
 import { useLanguageContext } from '../hooks/useLanguageContext'
 import { useContentsContext } from '../hooks/useContentsContext'
 
