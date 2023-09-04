@@ -79,7 +79,7 @@ export default function TeacherForm() {
                 type="text"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
-                className={"block p-2 w-full mt-2 mb-4 border-2 rounded-md box-border " + (emptyFields.includes('name') ? "border-red-600" : "border-slate-800")}
+                className={"block text-black p-2 w-full mt-2 mb-4 border-2 rounded-md box-border " + (emptyFields.includes('name') ? "border-red-600" : "border-slate-800")}
             />
 
             <label className="block">Country:</label>
@@ -87,7 +87,7 @@ export default function TeacherForm() {
                 type="text"
                 onChange={(e) => setCountry(e.target.value)}
                 value={country}
-                className={"block p-2 w-full mt-2 mb-4 border-2 rounded-md box-border " + (emptyFields.includes('country') ? "border-red-600" : "border-slate-800")}
+                className={"block text-black p-2 w-full mt-2 mb-4 border-2 rounded-md box-border " + (emptyFields.includes('country') ? "border-red-600" : "border-slate-800")}
             >
                 <option value="">--Select a Country</option>
                 <option value="Taiwan">Taiwan</option>
@@ -105,7 +105,7 @@ export default function TeacherForm() {
                 type="text"
                 onChange={(e) => setBio(e.target.value)}
                 value={bio}
-                className="block p-2 w-full mt-2 mb-4 border-slate-800 border-2 rounded-md box-border"
+                className="block text-black p-2 w-full mt-2 mb-4 border-slate-800 border-2 rounded-md box-border"
             />
 
             <label className="block">Teacher Order:</label>
@@ -113,7 +113,7 @@ export default function TeacherForm() {
                 type="number"
                 onChange={(e) => setOrder(e.target.value)}
                 value={order}
-                className={"block p-2 w-full mt-2 mb-4 border-2 rounded-md box-border " + (emptyFields.includes('order') ? "border-red-600" : "border-slate-800")}
+                className={"block text-black p-2 w-full mt-2 mb-4 border-2 rounded-md box-border " + (emptyFields.includes('order') ? "border-red-600" : "border-slate-800")}
             />
 
             <label className="block">Teacher Picture:</label>

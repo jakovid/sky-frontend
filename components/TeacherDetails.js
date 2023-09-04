@@ -94,12 +94,12 @@ export default function TeacherDetails({ teacher }) {
 
 
     return (
-        <div className="bg-green-950 rounded-lg m-4 p-5 relative shadow-md flex items-center gap-8">
+        <div className="bg-green-950 rounded-lg m-4 p-5 relative shadow-md flex items-center ">
             <div>
-                <img src={teacher.img_url} className="max-h-40 "/>
-                <div className="flex gap-3 items-center h-6 w-40">
-                    <h4 className="text-lg">{teacher.name}</h4>
-                    <img className="h-4" src={countrySwitch(teacher.country)} />
+                <img src={teacher.img_url} className="h-10 md:h-20 "/>
+                <div className="flex gap-3 items-center h-6 md:w-28">
+                    <h4 className="text-xs md:text-sm lg:text-md xl:text-lg">{teacher.name}</h4>
+                    <img className="h-2 md:h-3 lg:w-4" src={countrySwitch(teacher.country)} />
                 </div>
             </div>
             <p className="text-sm flex h-40 w-80 bg-white text-black p-2">{teacher.bio || "No Bio Available"}</p>
