@@ -9,7 +9,11 @@ function Admin() {
                 <title>Sky Education | Admin Page</title>
             </Head>
             <AdminNavBar />
-            <div className='bg-red-900 text-5xl flex h-screen items-center justify-center'>Hey Mario, you can navigate the admin page using the buttons above.</div>
+            <div className='bg-red-900 flex h-screen items-center justify-center'>
+                <div className=' text-5xl w-2/3 text-center'>
+                    Hey Mario, you can navigate the admin page using the buttons above.
+                </div>
+            </div>
         </div>    
     )    
 }

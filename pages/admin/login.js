@@ -54,6 +54,7 @@ export default function AdminLogin() {
                 <label>Username:</label>
                 <input
                     type="text"
+                    className='text-black px-2'
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                     required
@@ -64,13 +65,14 @@ export default function AdminLogin() {
                 <label>Password:</label>
                 <input
                     type="password"
+                    className='text-black px-2'
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     required
                 />
                 </div>
 
-                <button type="submit" className='bg-green-950 w-full rounded-full hover:text-green-950 hover:bg-white'>Login</button>
+                <button type="submit" className='bg-green-950 w-full rounded-full hover:text-green-950 hover:bg-white py-2'>Login</button>
           </form>
         </div>
         {error && <div style={{ color: 'red' }}>{error}</div>}
