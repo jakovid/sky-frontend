@@ -34,16 +34,21 @@ function AdminTeachers() {
             <Head>
                 <title>Sky Education | Manage Teachers</title>
             </Head>
-            <AdminNavbar />
-            <div className="w-full bg-red-900/90 flex flex-row justify-center items-center">
-                <div className="w-2/3 grid grid-cols-3 gap-24">
-                    <div className="col-span-2">
-                        {teachers && teachers.map((teacher) => (
-                            <TeacherDetails key={teacher._id} teacher={teacher} />
-                        ))}
-                    </div>
+            <div className='bg-red-900 flex sm:hidden w-screen h-screen justify-center items-center text-2xl text-center p-8'>
+                Please switch to desktop to edit the website.
+            </div>
+            <div className="hidden sm:flex flex-col w-screen">
+                <AdminNavbar />
+                <div className="w-full bg-red-900/90 flex flex-row justify-center items-center">
+                    <div className=" xl:w-2/3 grid grid-cols-3 xl:gap-24">
+                        <div className="col-span-2">
+                            {teachers && teachers.map((teacher) => (
+                                <TeacherDetails key={teacher._id} teacher={teacher} />
+                            ))}
+                        </div>
 
-                    <TeacherForm />
+                        <TeacherForm />
+                    </div>
                 </div>
             </div>
         </div>
