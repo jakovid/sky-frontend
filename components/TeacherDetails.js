@@ -108,8 +108,8 @@ export default function TeacherDetails({ teacher }) {
             <p className="text-xs flex h-20 w-20 bg-white text-black p-2">{teacher.bio ? truncateBio(teacher.bio) : "No Bio Available"}</p>
             <div className="flex flex-col items-center gap-2 text-xs h-20 xl:text-5xl text-black">
                 <div className="flex items-center gap-2">
-                    <label>Order:</label>
-                    <input type="number" value={order} className="text-black w-4 h-6 ps-1 xl:w-16 flex" onChange={(e) => setOrder(e.target.value)} />
+                    <label className="text-sm">Order:</label>
+                    <input type="number" value={order} className="text-black text-sm w-10 h-6 ps-1 xl:w-16 flex" onChange={(e) => setOrder(e.target.value)} />
                 </div>
                 <button type="submit" onClick={saveOrder} className="bg-red-900 text-white px-1 text-xs  h-auto w-auto m-2 rounded-s-full rounded-e-full cursor-pointer border-4 border-red-900 hover:bg-green-950">Save Order Update</button>
             </div>

@@ -1,5 +1,11 @@
 import Link from "next/link"
 import { useRouter } from 'next/router';
+import { useEffect } from 'react'
+
+// import hooks
+import { useLanguageContext } from "../hooks/useLanguageContext";
+import { useContentsContext } from '../hooks/useContentsContext';
+import { useWebImagesContext } from "@/hooks/useWebImagesContext";
 
 export default function AdminNavbar() {
     const router = useRouter();
@@ -13,6 +19,57 @@ export default function AdminNavbar() {
         // 3. Redirect the user to the login page or homepage
         router.push('/admin/login'); // or another path like '/'
     };
+
+    const { language, dispatch } = useLanguageContext();
+    const { dispatch: contentsDispatch, contents } = useContentsContext();
+    const{ dispatch: webImagesDispatch } = useWebImagesContext();
+      
+  
+      useEffect(() => {
+          const fetchContents = async() => {
+            const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/content`;
+              const response = await fetch(API_ENDPOINT)
+              const json = await response.json()
+  
+              if(response.ok) {
+                  contentsDispatch({
+                      type: 'SET_CONTENTS',
+                      payload: json
+                  })
+              }
+          }
+  
+          fetchContents()
+          
+      }, [contentsDispatch])
+  
+      useEffect(() => {
+        const fetchWebImages = async() => {
+            const API_ENDPOINT = `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/web-images`;
+          const response = await fetch(API_ENDPOINT)
+          const json = await response.json()
+  
+          if(response.ok) {
+              webImagesDispatch({
+                  type: 'SET_WEB_IMAGES',
+                  payload: json
+              })
+          }
+        }
+  
+        fetchWebImages();
+      }, [webImagesDispatch])
+  
+
+    let home = null, aboutUs = null, ourTeam = null, ourClasses = null, contactUs = null;
+
+    if (contents){
+        home = contents[0][language];
+        aboutUs = contents[1][language];
+        ourTeam = contents[2][language]; 
+        ourClasses = contents[3][language]; 
+        contactUs = contents[4][language];
+    }
 
     return (
         <header className="bg-blue-950 h-20 flex px-4 justify-center items-center">

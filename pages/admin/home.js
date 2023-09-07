@@ -1,5 +1,5 @@
 import withAuth from '@/components/withAuth'
-import LandingPageEng from "../index";
+import Iframe from 'react-iframe'
 import AdminNavbar from "@/components/AdminNavbar";
 import { useContentsContext } from "@/hooks/useContentsContext";
 import { useWebImagesContext } from "@/hooks/useWebImagesContext";
@@ -37,12 +37,12 @@ function AdminHome() {
             <div className='bg-red-900 flex sm:hidden w-screen h-screen justify-center items-center text-2xl text-center p-8'>
                 Please switch to desktop to edit the website.
             </div>
-            <div className="hidden sm:flex flex-col w-screen">
+            <div className="hidden sm:flex flex-col w-screen h-full">
                 <AdminNavbar />
-                <div className="grid grid-cols-2">
-                    <LandingPageEng />
+                <div className="grid grid-cols-2 h-full">
                     
-                    <div className="flex flex-col">
+                    <Iframe url="https://www.skyeducation.online" className='w-full h-full'/>
+                    <div className="flex flex-col h-full">
                         <div className="bg-red-900 p-5 flex items-center justify-center gap-8">
                             <button onClick={() => {handleClick('content')}} className="bg-green-950 px-8 py-2 rounded-s-full rounded-e-full cursor-pointer ">Content</button>
                             <button onClick={() => {handleClick('images')}}  className="bg-green-950 px-8 py-2 rounded-s-full rounded-e-full cursor-pointer ">Images</button>
