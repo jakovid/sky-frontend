@@ -3,7 +3,7 @@ import AdminNavbar from "@/components/AdminNavbar";
 import { useContentsContext } from "@/hooks/useContentsContext";
 import { useWebImagesContext } from "@/hooks/useWebImagesContext";
 import AdminEditForm from "@/components/AdminComps/AdminEditForm";
-import ContactUsEng from "../contact-us";
+import Iframe from 'react-iframe'
 import { useState } from "react";
 import EditWebImage from "@/components/EditWebImage";
 import Head from 'next/head';
@@ -38,7 +38,8 @@ function AdminContactUs() {
             <div className="hidden sm:flex flex-col w-screen">
                 <AdminNavbar />
                 <div className="grid grid-cols-2">
-                    <ContactUsEng />
+                    <Iframe url="https://www.skyeducation.online/contact-us" className='w-full h-full'/>
+
 
                     <div className="flex flex-col">
                         <div className="bg-red-900 p-5 flex items-center justify-center gap-8">

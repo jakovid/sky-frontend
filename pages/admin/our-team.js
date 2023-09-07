@@ -1,9 +1,9 @@
 import withAuth from '@/components/withAuth'
 import AdminNavbar from "@/components/AdminNavbar";
+import Iframe from 'react-iframe'
 import { useContentsContext } from "@/hooks/useContentsContext";
 import { useWebImagesContext } from "@/hooks/useWebImagesContext";
 import AdminEditForm from "@/components/AdminComps/AdminEditForm";
-import OurTeamEng from "../our-team"
 import { useState } from "react";
 import EditWebImage from "@/components/EditWebImage";
 import Head from 'next/head';
@@ -36,10 +36,10 @@ function AdminOurTeam() {
             <div className='bg-red-900 flex sm:hidden w-screen h-screen justify-center items-center text-2xl text-center p-8'>
                 Please switch to desktop to edit the website.
             </div>
-            <div className="hidden sm:flex flex-col w-screen">
+            <div className="hidden sm:flex flex-col w-screen h-screen">
                 <AdminNavbar />
-                <div className="grid grid-cols-2">
-                    <OurTeamEng />
+                <div className="grid grid-cols-2 h-full">
+                    <Iframe url="https://www.skyeducation.online/our-team" className='w-full h-full'/>
 
                     <div className="flex flex-col">
                         <div className="bg-red-900 p-5 flex items-center justify-center gap-8">

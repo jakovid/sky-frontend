@@ -1,9 +1,9 @@
 import withAuth from '@/components/withAuth'
 import AdminNavbar from "@/components/AdminNavbar";
+import Iframe from 'react-iframe'
 import { useContentsContext } from "@/hooks/useContentsContext";
 import { useWebImagesContext } from "@/hooks/useWebImagesContext";
 import AdminEditForm from "@/components/AdminComps/AdminEditForm";
-import AboutUsEng from "../about-us"
 import { useState } from "react";
 import EditWebImage from "@/components/EditWebImage";
 import Head from 'next/head';
@@ -41,7 +41,7 @@ function AdminAboutUs() {
             <div className="hidden sm:flex flex-col w-screen">
                 <AdminNavbar />
                 <div className="grid grid-cols-2">
-                    <AboutUsEng />
+                    <Iframe url="https://www.skyeducation.online/about-us" className='w-full h-full'/>
                     
                     <div className="flex flex-col">
                         <div className="bg-red-900 p-5 flex items-center justify-center gap-8">
