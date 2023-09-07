@@ -47,33 +47,38 @@ export default function AdminLogin() {
         <Head>
           <title>Sky Education | Admin Login</title>
         </Head>
-        <div className='bg-red-900 w-2/3 p-20 rounded-xl flex items-center flex-col'>
-            <form onSubmit={handleLogin} className='flex flex-col items-end gap-4'>
-              <h2 className='w-full text-center text-4xl'>Admin Login</h2>
-                <div className='flex gap-2'>
-                <label>Username:</label>
-                <input
-                    type="text"
-                    className='text-black px-2'
-                    value={username}
-                    onChange={e => setUsername(e.target.value)}
-                    required
-                />
-                </div>
+        <div className='sm:hidden text-2xl p-8 text-center'>
+          Please switch to desktop to edit the website.
+        </div>
+        <div className='hidden w-screen sm:flex justify-center items-center'>
+          <div className='bg-red-900 w-2/3 p-20 rounded-xl flex items-center flex-col'>
+              <form onSubmit={handleLogin} className='flex flex-col items-end gap-4'>
+                <h2 className='w-full text-center text-4xl'>Admin Login</h2>
+                  <div className='flex gap-2'>
+                  <label>Username:</label>
+                  <input
+                      type="text"
+                      className='text-black px-2'
+                      value={username}
+                      onChange={e => setUsername(e.target.value)}
+                      required
+                  />
+                  </div>
 
-                <div className='flex gap-2'>
-                <label>Password:</label>
-                <input
-                    type="password"
-                    className='text-black px-2'
-                    value={password}
-                    onChange={e => setPassword(e.target.value)}
-                    required
-                />
-                </div>
+                  <div className='flex gap-2'>
+                  <label>Password:</label>
+                  <input
+                      type="password"
+                      className='text-black px-2'
+                      value={password}
+                      onChange={e => setPassword(e.target.value)}
+                      required
+                  />
+                  </div>
 
-                <button type="submit" className='bg-green-950 w-full rounded-full hover:text-green-950 hover:bg-white py-2'>Login</button>
-          </form>
+                  <button type="submit" className='bg-green-950 w-full rounded-full hover:text-green-950 hover:bg-white py-2'>Login</button>
+            </form>
+          </div>
         </div>
         {error && <div style={{ color: 'red' }}>{error}</div>}
       </div>
