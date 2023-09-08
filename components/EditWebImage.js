@@ -72,11 +72,11 @@ export default function EditWebImage({ image }){
     return(
         <form onSubmit={updateWebImage} className="flex gap-4 p-4 items-center justify-center border-b-4 w-full border-[#E0D3AF]">
             <div className="text-center">
-                <img className="h-60" src={image.img_url} />
+                <img className="w-60" src={image.img_url} />
                 <p>Current {image.name} Image</p>
             </div>
             <div>
-                <img className="h-60" src={img_url} alt="" />
+                <img className="w-60" src={img_url} alt="" />
                 <input 
                     type="file"
                     onChange={(e) => uploadImage(e.target.files[0])}
@@ -84,7 +84,7 @@ export default function EditWebImage({ image }){
                 />
                 <label className="block">New {image.name} Picture</label>
             </div>
-            <button className="bg-green-950 border-none text-white p-2 rounded-s-full rounded-e-full cursor-pointer">Save New Picture</button>
+            <button className="bg-green-950 text-xs md:text-sm lg:text-md border-none text-white p-2 rounded-s-full rounded-e-full cursor-pointer hover:bg-red-900">Save New Picture</button>
             { error && <div className="p-3 border-2 text-red-600 border-red-600 bg-red-200 rounded-md my-5">{error}</div>}
 
         </form>

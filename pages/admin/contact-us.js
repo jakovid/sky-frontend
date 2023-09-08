@@ -43,8 +43,8 @@ function AdminContactUs() {
 
                     <div className="flex flex-col">
                         <div className="bg-red-900 p-5 flex items-center justify-center gap-8">
-                            <button onClick={() => {handleClick('content')}} className="bg-green-950 px-8 py-2 rounded-s-full rounded-e-full cursor-pointer ">Content</button>
-                            <button onClick={() => {handleClick('images')}}  className="bg-green-950 px-8 py-2 rounded-s-full rounded-e-full cursor-pointer ">Images</button>
+                            <button onClick={() => {handleClick('content')}} className="bg-green-950 px-8 py-2 rounded-s-full rounded-e-full cursor-pointer hover:text-green-950 hover:bg-white">Content</button>
+                            <button onClick={() => {handleClick('images')}}  className="bg-green-950 px-8 py-2 rounded-s-full rounded-e-full cursor-pointer hover:text-green-950 hover:bg-white">Images</button>
                         </div>
                         <div className="bg-blue-950/90 h-full flex flex-col items-center py-2 gap-2">
                             {editType === 'content' && contents && contents.slice(58, 65).map((content) => (
