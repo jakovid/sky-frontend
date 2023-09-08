@@ -37,7 +37,7 @@ export default function AdminEditForm({ content }) {
     }
 
     return(
-        <form onSubmit={updateContent} className="bg-blue-950 p-3 grid grid-cols-3 gap-2 w-4/5 items-center">
+        <form onSubmit={updateContent} className="bg-blue-950 p-3 grid grid-cols-3 gap-2 w-4/5 items-center border-white border-2">
             
             <div className="flex flex-col col-span-2">
                 <label>
@@ -51,7 +51,7 @@ export default function AdminEditForm({ content }) {
                 </label>
             </div>
             
-            <button type="submit" className="bg-red-900  h-auto w-auto m-2 text-2xl rounded-s-full rounded-e-full cursor-pointer border-4 border-red-900 hover:bg-green-950">Save Update</button>
+            <button type="submit" className="bg-red-900 text-xs sm:text-sm md:text-md lg:text-lg  h-auto w-auto m-2 xl:text-2xl rounded-s-full rounded-e-full cursor-pointer border-4 border-red-900 hover:bg-green-950">Save Update</button>
             
         </form>
     )
