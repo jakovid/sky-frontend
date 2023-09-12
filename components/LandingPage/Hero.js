@@ -36,7 +36,7 @@ export default function BuildHero() {
         <div className="flex flex-col sm:grid sm:grid-cols-3 sm:h-96">
             <div className="flex justify-center h-56 items-center sm:col-span-2 sm:h-full bg-center" style={{ backgroundImage: `url(${heroMain})` }}>
                 <div className='w-full flex justify-center bg-gray-300/50 pt-4'>
-                    <img src="/images/SkyLogo2.webp" />
+                    <img src="/images/SkyLogo2.JPG" />
                 </div>
             </div>
             <div className="bg-green-950/90 flex flex-col justify-center items-center text-center py-10 px-6 sm:py-4 gap-3">
